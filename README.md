@@ -1,4 +1,4 @@
-# ****Aldığım notları yazdığım, yeni öğrendiğimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
+# ****Aldığım notları yazdığım, yeni öğrendiklerimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
 
 ## Primitive (İlkel) Veri Tipleri:
 
