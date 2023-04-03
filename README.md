@@ -1,5 +1,244 @@
 # ****Aldığım notları yazdığım, yeni öğrendiklerimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
 
+Değişken (Variable):
+Değerlerin depolanması için kullanılan yapıdır. JavaScript'te değişkenler var, let ve const anahtar kelimeleri ile tanımlanabilir.
+
+Fonksiyon (Function):
+JavaScript'te fonksiyonlar birer nesnedir. Kod bloklarını paketler ve bir işlevi gerçekleştirmek için kullanılır. Fonksiyonlar, parametreleri alabilir ve geri dönüş değeri üretebilirler.
+
+Dizi (Array):
+JavaScript'te bir dizi birden fazla değerin depolanması için kullanılır. Diziler, [] işaretleri arasına değerlerin virgülle ayrılması ile tanımlanır.
+
+Nesne (Object):
+JavaScript'te bir nesne, özelliklerin (properties) ve yöntemlerin (methods) bir arada depolandığı bir yapıdır. Nesneler {} işaretleri ile tanımlanır.
+
+Sınıf (Class):
+Sınıf, nesnelerin şablonlarını tanımlar. JavaScript'te sınıflar ES6 sürümünden itibaren kullanılmaktadır.
+
+Metod (Method):
+Bir nesnenin özelliklerine erişmek veya işlem yapmak için kullanılan fonksiyonlara metod denir.
+
+Parametre (Parameter):
+Fonksiyonlara geçirilen değerlerdir. Parametreler, fonksiyonun tanımlandığı yerde belirtilir.
+
+Argüman (Argument):
+Bir fonksiyona geçirilen değerlerdir. Argümanlar, fonksiyonu çağırdığınız yerde belirtilir.
+
+Operatör (Operator):
+İki veya daha fazla değeri birleştirmek, karşılaştırmak veya işlemek için kullanılan sembollerdir.
+
+Koşul ifadesi (Conditional statement):
+Belirli bir koşulun sağlanıp sağlanmadığını kontrol ederek, farklı kod bloklarının çalıştırılmasını sağlayan ifadelerdir. JavaScript'te if-else, switch-case gibi koşul ifadeleri bulunmaktadır.
+
+Döngü (Loop):
+Belirli bir kod bloğunun, belirli bir koşul sağlanana kadar veya belirli bir sayıda kez çalıştırılmasını sağlayan yapılardır. JavaScript'te for, while, do-while gibi döngü yapıları bulunmaktadır.
+
+Callback fonksiyonu (Callback function):
+Bir fonksiyonun, başka bir fonksiyona argüman olarak geçirilmesidir. Bu, fonksiyonların modülerliğini artırır.
+
+DOM (Document Object Model):
+Web sayfalarının, HTML, XML ve XHTML gibi belge türlerinin birer nesne olarak temsil edildiği bir platformdır.
+
+İç içe fonksiyonlar (Nested functions):
+Bir fonksiyon içinde tanımlanan ve o fonksiyon tarafından çağrılan fonksiyonlardır.
+
+Rekürsif fonksiyon (Recursive function):
+Kendi kendini çağıran bir fonksiyondur.
+
+Kalıtım (Inheritance):
+Bir sınıfın özelliklerinin ve metodlarının başka bir sınıf tarafından kullanılmasını sağlayan yapıdır.
+
+Get ve set fonksiyonları (Getters and setters):
+Nesne özelliklerine değer atamak ve okumak için kullanılan özel fonksiyonlardır.
+
+Promise zincirleri (Promise chaining):
+Birbirine bağlı promise'ların ardışık şekilde kullanılmasıdır.
+
+IIFE (Immediately Invoked Function Expression):
+Fonksiyonu tanımladıktan sonra hemen çağırmak için kullanılan bir yapıdır.
+
+Strict modu (Strict mode):
+JavaScript kodunun daha sıkı bir şekilde yorumlanmasını sağlayan bir yapıdır.
+
+Generatör fonksiyon (Generator function):
+İçinde yield ifadesi bulunan fonksiyonlardır ve bu sayede asenkron işlemleri yönetmek için kullanılır.
+
+Async/await:
+Asenkron işlemleri yönetmek için kullanılan bir yapıdır ve promise'ların daha okunaklı bir şekilde kullanılmasını sağlar.
+
+Fetch API:
+Sunucudan veri almak için kullanılan bir arayüzdür ve XMLHttpRequest (XHR) yerine tercih edilir.
+
+Local Storage:
+Web sayfasında veri saklamak için kullanılan bir mekanizmadır.
+
+Session Storage:
+Oturum (session) boyunca veri saklamak için kullanılan bir mekanizmadır.
+
+Cookies:
+Kullanıcının bilgisayarında saklanan küçük metin dosyalarıdır ve web sayfasının durumunu takip etmek için kullanılır.
+
+Regular Expression (Regex):
+Belirli bir kalıba uygun olan metinleri seçmek için kullanılan bir dil ve yapısıdır.
+
+Template literals:
+Bir dize içinde değişkenleri veya ifadeleri yerleştirmek için kullanılan yapıdır.
+
+Destructuring assignment:
+Nesnelerin veya dizilerin özelliklerine veya elemanlarına tek seferde erişmek için kullanılan yapıdır.
+
+Asynchronous programming:
+Asenkron işlemleri yönetmek için kullanılan bir yaklaşımdır ve zaman alıcı işlemlerin ana işlemi engellemeden yapılmasını sağlar.
+
+Event loop:
+JavaScript'in asenkron işlemleri yönetmek için kullandığı bir yapıdır ve callback fonksiyonlarının sırayla işletilmesini sağlar.
+
+Scope:
+Değişkenlerin ve fonksiyonların erişilebilirlik alanlarını tanımlar.
+
+Hoisting:
+Değişkenlerin ve fonksiyonların tanımlarının, kodun yukarıya doğru kaldırılması yoluyla işlendiği bir yapıdır.
+
+Closures:
+Bir fonksiyonun içinde tanımlanan fonksiyonlar, dış fonksiyondaki değişkenlere erişebilir ve bu değişkenleri koruyabilir.
+
+Callback hell:
+Çok sayıda callback fonksiyonunun birbirine bağlı şekilde kullanıldığı, kodun okunaklılığını azaltan bir yapıdır.
+
+Debugging:
+Kodun hatalarını bulmak ve düzeltmek için kullanılan bir süreçtir.
+
+Transpiling:
+Yeni JavaScript özelliklerini eski tarayıcılarda da kullanabilmek için, yeni kod
+
+ES6 Modules:
+ECMAScript 6 ile birlikte tanıtılan modül sistemi, JavaScript dosyalarını modüller halinde kullanmayı sağlar.
+
+Babel:
+Yeni JavaScript özelliklerini eski tarayıcılarda da kullanabilmek için kullanılan bir transpiler'dır.
+
+Webpack:
+JavaScript uygulamalarının modüler şekilde paketlenmesi için kullanılan bir araçtır.
+
+Virtual DOM:
+React'ta kullanılan bir teknolojidir ve değişikliklerin öncelikle bir sanal DOM üzerinde yapılıp daha sonra gerçek DOM'a yansıtılmasını sağlar.
+
+Redux:
+JavaScript uygulamalarında durum yönetimi için kullanılan bir kütüphanedir.
+
+JSX:
+React uygulamalarında kullanılan, JavaScript ve HTML benzeri bir sözdizimi sunan bir yapıdır.
+
+Web Workers:
+Web sayfalarında işlemlerin paralel şekilde yapılmasını sağlayan bir arayüzdür.
+
+Service Workers:
+Web sayfalarının arka planda çalışarak çevrimdışı da çalışmasını sağlayan bir arayüzdür.
+
+IndexedDB:
+Tarayıcının yerel veritabanıdır ve web sayfalarında veri saklamak için kullanılır.
+
+WebGL:
+Web sayfalarında 3D grafikler oluşturmak için kullanılan bir arayüzdür.
+
+WebRTC:
+Tarayıcılar arasında gerçek zamanlı iletişim kurmak için kullanılan bir arayüzdür.
+
+Accessibility:
+Web sayfalarının tüm kullanıcılar için erişilebilir olmasını sağlamak için yapılan çalışmalardır.
+
+SEO (Search Engine Optimization):
+Web sayfalarının arama motorları tarafından daha iyi indekslenebilmesi için yapılan çalışmalardır.
+
+Progressive Web Apps (PWA):
+Web uygulamalarının, geleneksel mobil uygulamalar gibi davranmasını ve özellikler sunmasını sağlayan bir yapıdır.
+
+Single-page Application (SPA):
+Web sayfalarının tek bir HTML sayfasında yüklenip, daha sonra JavaScript aracılığıyla içeriklerin dinamik olarak yüklenmesini sağlayan bir yapıdır.
+
+API (Application Programming Interface):
+Bir yazılımın diğer yazılımlarla iletişim kurmasını sağlayan bir arayüzdür.
+
+CRUD (Create, Read, Update, Delete):
+Veritabanı işlemlerinin temel işlemlerini ifade eder.
+
+Git:
+Sürüm kontrolü için kullanılan bir yazılımdır ve kodun değişikliklerinin takibi ve geri alınması gibi işlemleri yap
+
+NPM (Node Package Manager):
+Node.js projelerinde paket yönetimi için kullanılan bir araçtır.
+
+Yarn:
+NPM alternatifi bir paket yöneticisidir.
+
+Linter:
+Kod kalitesini artırmak ve hataları önceden tespit etmek için kullanılan bir araçtır.
+
+Unit Test:
+Kodun küçük birimlerindeki işlevlerin doğruluğunu test etmek için kullanılan bir test türüdür.
+
+Integration Test:
+Birkaç birim arasındaki etkileşimi test etmek için kullanılan bir test türüdür.
+
+End-to-End (E2E) Test:
+Bir uygulamanın tüm fonksiyonlarının doğru çalıştığını kontrol etmek için kullanılan bir test türüdür.
+
+Continuous Integration (CI):
+Kodun sürekli olarak test edilmesi ve birleştirilmesi için kullanılan bir süreçtir.
+
+Continuous Deployment (CD):
+Kodun otomatik olarak üretim ortamına dağıtılması için kullanılan bir süreçtir.
+
+Agile:
+Yazılım geliştirme sürecinde esnek bir yaklaşımı ifade eder ve müşteri geri bildirimleri doğrultusunda sık sık yeni özelliklerin eklenmesini ve geliştirilmesini sağlar.
+
+Scrum:
+Agile yaklaşımın bir uygulama şeklidir ve bir ekip içinde çalışan üyelerin bir araya gelerek projeyi yönettiği bir süreçtir.
+
+Kanban:
+Agile yaklaşıma dayalı bir proje yönetim yöntemidir ve projenin durumunu görsel olarak takip etmeyi sağlar.
+
+Waterfall:
+Yazılım geliştirme sürecinde, bir adımın tamamlanmasının ardından diğer adıma geçilir ve geri dönüş yapılmaz.
+
+Spiral:
+Yazılım geliştirme sürecinde, proje ilerledikçe yapılan analiz ve tasarım çalışmalarının tekrarlanması üzerine kurulu bir yaklaşımdır.
+
+MVP (Minimum Viable Product):
+Bir ürünün en temel özelliklerini içeren ve müşteri geri bildirimleri doğrultusunda geliştirilen bir prototip aşamasıdır.
+
+Design Pattern:
+Tekrar eden yazılım problemlerine karşı genel çözümler sunan yazılım tasarımı prensipleridir.
+
+SOLID:
+Yazılım geliştirme prensiplerinin birleştirilmesiyle oluşan bir dizi ilkedir. S:
+Tek Sorumluluk İlkesi (Single Responsibility Principle), O:
+Açık/Kapalı İlkesi (Open/Closed Principle), L:
+Liskov Yerine Geçme İlkesi (Liskov Substitution Principle), I:
+Arayüz Ayrımı İlkesi (Interface Segregation Principle), D:
+Bağımlılığı Tersine Çevirme İlkesi (Dependency Inversion Principle)
+
+REST (Representational State Transfer):
+Web servislerinde kullanılan bir mimaridir ve HTTP protokolünü kullanarak kaynakların (resource) durumunu (state) yönetir.
+
+Template literals:
+Bir dize içinde değişkenleri veya ifadeleri yerleştirmek için kullanılan yapıdır.
+
+Destructuring assignment:
+Nesnelerin veya dizilerin özelliklerine veya elemanlarına tek seferde erişmek için kullanılan yapıdır.
+
+XML (Extensible Markup Language):
+Veri aktarımı için kullanılan bir formattır ve metin tabanlı bir işaret dili kullanır.
+
+Type coercion:
+JavaScript'te, bir veri türünün otomatik olarak başka bir veri türüne dönüştürülmesi anlamına gelir.
+
+Map:
+JavaScript'te, her bir öğe ile bir değer çifti olan bir dizi veri yapısıdır.
+
+
+
+
 ## Primitive (İlkel) Veri Tipleri:
 
 ### String: 
