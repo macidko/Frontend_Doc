@@ -1,3 +1,4 @@
+# ****Aldığım notları yazdığım, yeni öğrendiğimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
 
 ## Primitive (İlkel) Veri Tipleri:
 
@@ -93,16 +94,27 @@ let pattern = /JavaScript/;
 
 ### Variables
 
-JavaScript'te değişkenler, veri saklamak veya ileride kullanmak için değer atamak için kullanılır. JavaScript'te değişkenler dinamik olarak tip alır, yani bir değişkenin tipi, değişkenin değeri atanırken otomatik olarak belirlenir.
-var anahtar kelimesi, bir değişken tanımlamak için kullanılır. Ancak, "var" değişkenleri, blok kapsamı yerine işlev kapsamı veya global kapsam kullanır. Bu nedenle, "var" değişkenleri, aynı isimde birden fazla değişken tanımlanmasına izin verir ve bu da beklenmeyen sonuçlara yol açabilir.
-let anahtar kelimesi, "var" anahtar kelimesinin yerini almıştır. "let" değişkenleri blok kapsamını kullanır, bu nedenle aynı isimdeki bir değişkenin yeniden tanımlanması mümkün değildir. Ayrıca, "let" değişkenleri "undefined" olarak değer alır.
-const anahtar kelimesi, "let" anahtar kelimesine benzerdir, ancak "let" ile farklı olarak, bir kez değer atandığında değiştirilemez. "const" değişkenleri, özellikle sabitler veya sabit değerler için kullanışlıdır.
+JavaScript'te değişkenler, veri saklamak veya ileride kullanmak için değer atamak için kullanılır. 
+JavaScript'te değişkenler dinamik olarak tip alır, yani bir değişkenin tipi, değişkenin değeri atanırken otomatik olarak belirlenir.
 
-Örneğin,
+## var 
+anahtar kelimesi, bir değişken tanımlamak için kullanılır. Ancak, "var" değişkenleri, blok kapsamı yerine işlev kapsamı veya global kapsam kullanır. Bu nedenle, "var" değişkenleri, aynı isimde birden fazla değişken tanımlanmasına izin verir ve bu da beklenmeyen sonuçlara yol açabilir.
 
 ```
 var name = "John"; // var ile değişken tanımlama
+```
+
+## let 
+anahtar kelimesi, "var" anahtar kelimesinin yerini almıştır. "let" değişkenleri blok kapsamını kullanır, bu nedenle aynı isimdeki bir değişkenin yeniden tanımlanması mümkün değildir. Ayrıca, "let" değişkenleri "undefined" olarak değer alır.
+
+```
 let age = 30; // let ile değişken tanımlama
+```
+
+## const 
+anahtar kelimesi, "let" anahtar kelimesine benzerdir, ancak "let" ile farklı olarak, bir kez değer atandığında değiştirilemez. "const" değişkenleri, özellikle sabitler veya sabit değerler için kullanışlıdır.
+
+```
 const PI = 3.14159; // const ile sabit tanımlama
 ```
 
