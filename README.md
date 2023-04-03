@@ -2,30 +2,310 @@
 
 ## Değişken (Variable):
 Değerlerin depolanması için kullanılan yapıdır. JavaScript'te değişkenler var, let ve const anahtar kelimeleri ile tanımlanabilir.
+```
+let firstName = "John";
+```
+Burada let, const ve var anahtar kelimeleri ile sırasıyla değişkenler tanımlanmıştır. let ve const blok kapsamına sahipken, var ise fonksiyon veya global kapsama sahip olabilir. firstName deği
 
 ## Fonksiyon (Function):
 JavaScript'te fonksiyonlar birer nesnedir. Kod bloklarını paketler ve bir işlevi gerçekleştirmek için kullanılır. Fonksiyonlar, parametreleri alabilir ve geri dönüş değeri üretebilirler.
+```
+function helloWorld() {
+  console.log("Hello, World!");
+}
 
+helloWorld();
+```
 ## Dizi (Array):
 JavaScript'te bir dizi birden fazla değerin depolanması için kullanılır. Diziler, [] işaretleri arasına değerlerin virgülle ayrılması ile tanımlanır.
+```
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
 
 ## Nesne (Object):
 JavaScript'te bir nesne, özelliklerin (properties) ve yöntemlerin (methods) bir arada depolandığı bir yapıdır. Nesneler {} işaretleri ile tanımlanır.
+```
+const obje = {
+  isim: 'Ahmet',
+  soyisim: 'Yılmaz',
+  yas: 30,
+  adres: {
+    sehir: 'Ankara',
+    ilce: 'Çankaya',
+    postaKodu: 06500
+  }
+};
+
+console.log(obje);
+```
 
 ## Sınıf (Class):
 Sınıf, nesnelerin şablonlarını tanımlar. JavaScript'te sınıflar ES6 sürümünden itibaren kullanılmaktadır.
+```
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
 
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+// Rectangle sınıfından bir nesne oluşturun
+const rect1 = new Rectangle(5, 10);
+
+// getArea() yöntemini çağırın
+console.log(rect1.getArea()); // 50 yazdırır
+
+```
 ## Metod (Method):
 Bir nesnenin özelliklerine erişmek veya işlem yapmak için kullanılan fonksiyonlara metod denir.
 
+JavaScript'te bir yöntem (method), bir nesne tarafından desteklenen ve o nesneyle ilgili bir işlemi gerçekleştiren işlevsel bir kod parçasıdır. Bir yöntem, bir nesne örneği üzerinde çağrılabilir ve o nesne örneği için bir işlem yapar.
+
+Bir JavaScript yöntemi, bir fonksiyonun bir özelliğinin bir parçası olarak tanımlanır ve genellikle bir nesne örneği üzerinde çağrılır. Yöntemler, nesne özellikleri gibi "this" anahtar kelimesini kullanarak nesne özelliklerine erişebilir ve bu özellikleri değiştirebilir.
+
+Örneğin, aşağıdaki örnekte, "person" adlı bir nesne tanımlıyoruz ve "sayHello" adlı bir yöntem ekliyoruz:
+```
+let person = {
+  name: "Ahmet",
+  age: 30,
+  sayHello: function() {
+    console.log(`Merhaba, benim adım ${this.name} ve ben ${this.age} yaşındayım.`);
+  }
+};
+
+// sayHello() yöntemini çağırın
+person.sayHello(); // "Merhaba, benim adım Ahmet ve ben 30 yaşındayım." yazdırır
+```
+Yukarıdaki örnekte, "sayHello" yöntemi, "person" nesne örneği üzerinde çağrılır ve nesne özelliklerine erişir (this.name ve this.age) ve bir mesaj oluşturur.
+
 ## Parametre (Parameter):
-Fonksiyonlara geçirilen değerlerdir. Parametreler, fonksiyonun tanımlandığı yerde belirtilir.
+JavaScript'te parametreler, fonksiyonlara aktarılan verilerdir. Fonksiyonlar, parametrelerin kullanılması yoluyla belirli bir işlevi yerine getirirler.
+
+Parametreler, bir fonksiyonun tanımında parantez içinde belirtilir ve fonksiyonun çağrılmasında argümanlar olarak geçirilirler. Argümanlar, fonksiyonun işlevini gerçekleştirmesi için gereken verilerdir.
+
+Aşağıdaki örnekte, bir fonksiyon iki parametre alır ve bu parametreleri kullanarak basit bir hesaplama yapar:
+```
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+let result = multiply(5, 10);
+console.log(result); // 50 yazdırır
+```
+Yukarıdaki örnekte, "multiply" adlı bir fonksiyon tanımlıyoruz ve bu fonksiyon "num1" ve "num2" adlı iki parametre alıyor. Bu parametreler, fonksiyon çağrısında argümanlarla eşleştirilir. Fonksiyon, parametreler aracılığıyla verilen argümanları kullanarak bir işlem gerçekleştirir ve sonucu döndürür.
+
+"Fonksiyonlar" adlı bir konuda daha örnekler ve detaylı açıklamalar yer almaktadır, buraya da bakabilirsiniz.
 
 ## Argüman (Argument):
-Bir fonksiyona geçirilen değerlerdir. Argümanlar, fonksiyonu çağırdığınız yerde belirtilir.
+JavaScript'te argümanlar, bir fonksiyonun çağrılması sırasında fonksiyona geçirilen değerlerdir. Bu değerler, fonksiyonun işlevini gerçekleştirmesi için gerekli olan verilerdir.
+
+Argümanlar, bir fonksiyonun parantez içinde belirtilen parametrelerle eşleştirilir. Fonksiyon parametreleri ile argümanlar arasındaki eşleştirme sırasına göre belirlenir. Örneğin, bir fonksiyonun üç parametresi varsa ve fonksiyon çağrısı sırasında sadece iki argüman geçirilirse, fonksiyonun ilk iki parametresi, geçirilen argümanlarla eşleştirilir ve üçüncü parametre "undefined" olarak atanır.
+
+Aşağıdaki örnekte, "multiply" adlı bir fonksiyon tanımlıyoruz ve bu fonksiyon iki argüman alıyor:
+```
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+let result = multiply(5, 10);
+console.log(result); // 50 yazdırır
+```
+Yukarıdaki örnekte, "multiply" fonksiyonunu çağırırken iki argüman geçiriyoruz: 5 ve 10. Bu argümanlar, fonksiyonun "num1" ve "num2" parametreleri ile eşleştirilir ve fonksiyon, bu parametreler aracılığıyla çarpma işlemini gerçekleştirir ve sonucu döndürür.
+
+"Fonksiyonlar" adlı bir konuda daha örnekler ve detaylı açıklamalar yer almaktadır, buraya da bakabilirsiniz.
 
 ## Operatör (Operator):
 İki veya daha fazla değeri birleştirmek, karşılaştırmak veya işlemek için kullanılan sembollerdir.
+
+Aritmetik operatörler:
+Toplama (+): Sayıları toplar veya stringleri birleştirir.
+Çıkarma (-): Sayılardan bir sayıyı diğerinden çıkarır.
+Çarpma (*): Sayıları çarpar.
+Bölme (/): Bir sayıyı diğerine böler.
+Mod (%) : İlk sayıyı ikinci sayıya böler ve kalanı döndürür.
+```
+let num1 = 10;
+let num2 = 3;
+
+console.log(num1 + num2); // 13
+console.log(num1 - num2); // 7
+console.log(num1 * num2); // 30
+console.log(num1 / num2); // 3.3333333333333335
+console.log(num1 % num2); // 1
+```
+
+Karşılaştırma operatörleri:
+
+Eşitlik (==): İki değer eşit ise true döndürür.
+Katı eşitlik (===): İki değer hem tür hem de değer açısından eşit ise true döndürür.
+Eşit değil (!=): İki değer farklı ise true döndürür.
+Katı eşit değil (!==): İki değer hem tür hem de değer açısından farklı ise true döndürür.
+Büyüktür (>): Sol taraftaki sayı sağ taraftakinden büyükse true döndürür.
+Küçüktür (<): Sol taraftaki sayı sağ taraftakinden küçükse true döndürür.
+Büyük eşit (>=): Sol taraftaki sayı sağ taraftakinden büyük veya eşitse true döndürür.
+Küçük eşit (<=): Sol taraftaki sayı sağ taraftakinden küçük veya eşitse true döndürür.
+```
+let num1 = 10;
+let num2 = 3;
+let str1 = "10";
+
+console.log(num1 == str1); // true
+console.log(num1 === str1); // false
+console.log(num1 != num2); // true
+console.log(num1 !== str1); // true
+console.log(num1 > num2); // true
+console.log(num1 < num2); // false
+console.log(num1 >= num2); // true
+console.log(num1 <= num2); // false
+```
+
+Mantıksal operatörler:
+
+Ve (&&): İki koşulun da doğru olması durumunda true döndürür.
+Veya (||): En az bir koşulun doğru olması durumunda true döndürür.
+Değil (!): Koşulun tersini döndürür.
+```
+let num1 = 10;
+let num2 = 3;
+let str1 = "10";
+
+console.log(num1 > num2 && num1 == str1); // true
+console.log(num1 > num2 || num1 < num2); // true
+console.log(!(num1 > num2)); // false
+```
+Atama operatörleri:
+
+Eşittir (=): Değer ataması yapar.
+Toplama eşittir (+=): Değişkenin değerine bir sayı ekler ve sonucu tekrar değişkene atar.
+Çıkarma eşittir (-=): Değişkenin değerinden bir sayı çıkarır ve sonucu tekrar değişkene atar.
+Çarpma eşittir (*=): Değişkenin değerini bir sayıyla çarpar ve sonucu tekrar değişkene atar.
+Bölme eşittir (/=): Değişkenin değerini bir sayıya böler ve sonucu tekrar değişkene atar.
+```
+let num1 = 10;
+
+num1 += 5; // num1 = num1 + 5;
+console.log(num1); // 15
+
+num1 -= 3; // num1 = num1 - 3;
+console.log(num1); // 12
+
+num1 *= 2; // num1 = num1 * 2;
+console.log(num1); // 24
+
+num1 /= 4; // num1 = num1 / 4;
+console.log(num1); // 6
+```
+Bitişik operatörler:
+
+Arttır (++) : Değişkenin değerini 1 arttırır.
+Azalt (--) : Değişkenin değerini 1 azaltır.
+```
+let num1 = 10;
+
+console.log(num1++); // 10
+console.log(num1); // 11
+
+console.log(++num1); // 12
+
+console.log(num1--); // 12
+console.log(num1); // 11
+
+console.log(--num1); // 10
+```
+Diğer operatörler:
+
+Ternary (?:) : İf-else yapısının kısaltılmış halidir.
+Virgül (,) : Birden fazla ifadeyi birleştirir ve son ifadenin değerini döndürür.
+```
+let num1 = 10;
+let num2 = 3;
+
+let max = (num1 > num2) ? num1 : num2;
+console.log(max); // 10
+
+let sum = (num1 += 2, num2 += 2, num1 + num2);
+console.log(sum); // 17
+```
+Bit operatörleri:
+
+AND (&) : İki sayının ikilik tabandaki karşılıklarındaki bitlerin her ikisinde de 1 olan bitleri 1 olarak belirler.
+OR (|) : İki sayının ikilik tabandaki karşılıklarındaki bitlerin herhangi birinde 1 olan bitleri 1 olarak belirler.
+XOR (^) : İki sayının ikilik tabandaki karşılıklarındaki bitlerin sadece birinde 1 olan bitleri 1 olarak belirler.
+NOT (~) : Bir sayının ikilik tabandaki karşılığını alır ve her biti tersine çevirir.
+Left Shift (<<) : Bir sayının ikilik tabandaki karşılığını belirtilen sayı kadar sola kaydırır ve boşlukları 0 ile doldurur.
+Right Shift (>>) : Bir sayının ikilik tabandaki karşılığını belirtilen sayı kadar sağa kaydırır ve boşlukları en sol bitin değerine göre doldurur.
+Zero-fill Right Shift (>>>) : Bir sayının ikilik tabandaki karşılığını belirtilen sayı kadar sağa kaydırır ve boşlukları 0 ile doldurur.
+```
+let num1 = 10; // 1010 (ikilik tabanda)
+let num2 = 5; // 0101 (ikilik tabanda)
+
+let and = num1 & num2; // 0000
+console.log(and); // 0
+
+let or = num1 | num2; // 1111
+console.log(or); // 15
+
+let xor = num1 ^ num2; // 1111
+console.log(xor); // 15
+
+let not = ~num1; // -11 (ikilik tabanda)
+console.log(not); // -11
+
+let leftShift = num1 << 2; // 101000 (ikilik tabanda)
+console.log(leftShift); // 40
+
+let rightShift = num1 >> 1; // 0101 (ikilik tabanda)
+console.log(rightShift); // 5
+
+let zeroFillRightShift = num1 >>> 1; // 0101 (ikilik tabanda)
+console.log(zeroFillRightShift); // 5
+```
+Diğer operatörler:
+
+Delete : Bir nesne özelliğini veya bir dizinin elemanını siler.
+Typeof : Bir değerin veri türünü belirler.
+Void : Bir ifadeyi değer döndürmeden işler.
+In : Bir özelliğin bir nesne içinde var olup olmadığını belirler.
+Instanceof : Bir nesnenin belirli bir sınıfın örneği olup olmadığını belirler.
+
+```
+// typeof operatörü
+let num = 5;
+let str = "Hello";
+console.log(typeof num); // "number"
+console.log(typeof str); // "string"
+
+// delete operatörü
+let obj = { name: "John", age: 30 };
+delete obj.age;
+console.log(obj); // { name: "John" }
+
+let arr = [1, 2, 3];
+delete arr[1];
+console.log(arr); // [1, undefined, 3]
+
+// in operatörü
+console.log("name" in obj); // true
+console.log(1 in arr); // true
+
+// instanceof operatörü
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const person1 = new Person("Alice", 25);
+
+console.log(person1 instanceof Person); // true
+console.log(person1 instanceof Object); // true
+```
 
 ## Koşul ifadesi (Conditional statement):
 Belirli bir koşulun sağlanıp sağlanmadığını kontrol ederek, farklı kod bloklarının çalıştırılmasını sağlayan ifadelerdir. JavaScript'te if-else, switch-case gibi koşul ifadeleri bulunmaktadır.
@@ -476,44 +756,176 @@ Value:
 
 ###  Rest Operator(...): 
 
-Rest Parametresi, fonksiyonlara sınır sayısı olmadan parametre geçmemize olanak verir ve bizim isteğimiz harici kalan tüm öğeleri bir dizide toplar.
-Detay: https://www.hakanbaykara.com/blog/javascriptte-rest-ve-spread-operatorleri-kullanimi-ve-farklari/
+JavaScript'de Rest Operator (...) , bir dizi parametreyi tek bir değişkene toplamak veya bir diziyi başka bir diziye eklemek gibi işlemler yapmak için kullanılır.
+
+Rest operatorü, bir fonksiyona değişken sayıda argüman geçirirken kullanılabilir. Fonksiyon parametreleri, rest operatörü ile tanımlandığında, fonksiyona geçirilen tüm argümanlar bir dizi olarak toplanır.
+
+Örneğin, aşağıdaki örnekte rest operatörü kullanılarak bir fonksiyona değişken sayıda parametre geçirilir:
+
+const sebzeler = ['havuç', 'brokoli', ...meyveler];
+
+console.log(sebzeler); // ['havuç', 'brokoli', 'elma', 'armut', 'muz']
+
+Yukarıdaki örnekte, ...meyveler ifadesi, meyveler dizisinin elemanlarını tek tek ayırarak sebzeler dizisine ekler. Sonuç olarak, sebzeler dizisi, önce 'havuç' ve 'brokoli' olmak üzere iki sebze ve ardından meyveler dizisinin elemanları olan 'elma', 'armut' ve 'muz' şeklinde bir dizi haline gelir.
 
 ### Spread Oparator(...): 
 
-Spread Operatörü; String, Array veya Object değişmezlerini genişletmemize yardımcı olur.
-Detay: https://www.hakanbaykara.com/blog/javascriptte-rest-ve-spread-operatorleri-kullanimi-ve-farklari/
+JavaScript'de Spread Operator (...) bir dizi veya nesne ifadesinin öğelerini ayrıştırmak için kullanılır.
+
+Dizi öğeleri için, Spread Operator, bir dizi ifadesinin tüm öğelerini ayırır ve bunları farklı bir dizi içine yerleştirir. Örneğin:
+
+const numbers = [1, 2, 3];
+const moreNumbers = [4, 5, 6];
+const allNumbers = [...numbers, ...moreNumbers];
+
+console.log(allNumbers); // [1, 2, 3, 4, 5, 6]
+Burada, numbers ve moreNumbers dizileri, Spread Operator (...) kullanarak allNumbers dizisinde birleştirilir.
+
+Nesne özellikleri için, Spread Operator, bir nesne ifadesindeki özellikleri başka bir nesneye kopyalamak için kullanılır. Örneğin:
+
+const person = { name: "John", age: 30 };
+const newPerson = { ...person, city: "Istanbul" };
+
+console.log(newPerson); // { name: "John", age: 30, city: "Istanbul" }
+Burada, person nesnesi, Spread Operator (...) kullanarak newPerson nesnesine kopyalanır ve yeni bir city özelliği eklenir.
 
 ### Mutable:
+(Object, Array, Map, Set)
 
-Değer oluşturulduğunda, değiştirilebilir.
-Detay: https://hakirac.medium.com/javascriptde-immutable-de%C4%9Fi%C5%9Fmez-ve-mutable-de%C4%9Fi%C5%9Fir-mimarisi-1b2883ca7afb
+JavaScript'te bir değişkenin değerini değiştirebiliyorsanız, o değişken değiştirilebilirdir veya "mutable" olarak adlandırılır. Bu, örneğin bir dizi veya nesne gibi veri türleri için geçerlidir. Örneğin, bir diziye yeni bir öğe ekleyebilir veya bir nesnenin özelliklerini değiştirebilirsiniz ve bu değişiklikler doğrudan orijinal nesneyi etkiler.
+
+Örneğin, aşağıdaki kodda bir diziyi değiştiriyoruz:
+
+let myArray = [1, 2, 3];
+myArray.push(4);
+console.log(myArray); // [1, 2, 3, 4]
+
+myArray dizisine push() yöntemi kullanarak 4 değerini ekledik. Bu, dizinin orijinal halini değiştirdi ve [1, 2, 3, 4] olarak güncellendi. Bu, dizi değiştirilebilir olduğu için mümkündür.
 
 ### Immutable: 
+(String, Number, Boolean, null, undefined, Symbol)
 
-Değer oluşturulduğunda, değiştirilemez
-Detay: https://hakirac.medium.com/javascriptde-immutable-de%C4%9Fi%C5%9Fmez-ve-mutable-de%C4%9Fi%C5%9Fir-mimarisi-1b2883ca7afb
+JavaScript'te, bazı veri tipleri değiştirilemez (immutable) olarak adlandırılır, yani bir kez oluşturulduktan sonra değiştirilemezler. Bu özellik, programlama dilinin güvenli ve tutarlı kalmasını sağlar. Aşağıda, JavaScript'te değiştirilemez olan bazı veri tipleri listelenmiştir:
+
+String: Bir kez oluşturulduktan sonra, bir dize (string) değiştirilemez. Bunun yerine, var olan bir dizenin bölümleri kopyalanarak yeni bir dize oluşturulabilir.
+Örnek:
+let str1 = "JavaScript";
+let str2 = str1.slice(0,4) + " is fun!";
+console.log(str2); // "Java is fun!"
+
+Number: Bir sayı (number) değiştirilemezdir. Bunun yerine, var olan bir sayının matematiksel işlemler sonucunda elde edilen yeni bir sayı oluşturulabilir.
+Örnek:
+
+let num1 = 10;
+let num2 = num1 + 5;
+console.log(num2); // 15
+
+Boolean: Bir boolean değiştirilemezdir. Bunun yerine, var olan bir boolean'ın değeri, mantıksal işlemler sonucunda elde edilen yeni bir boolean ile değiştirilebilir.
+Örnek:
+let bool1 = true;
+let bool2 = !bool1;
+console.log(bool2); // false
+Symbol: Bir sembol (symbol) değiştirilemezdir. Her sembol benzersizdir ve bir kez oluşturulduktan sonra değiştirilemez.
+Örnek:
+
+let sym1 = Symbol("foo");
+let sym2 = Symbol("foo");
+console.log(sym1 === sym2); // false
+Bu değiştirilemez veri tipleri, genellikle bir nesne içinde saklanarak kullanılır. Nesneler, özelliklerin ve değerlerin bir koleksiyonudur ve nesnelerin kendileri değiştirilebilir olsa da, nesne içindeki özellikler değiştirilemez olabilir.
 
 ### Mutate 
-doğrudan değiştirmeden
+
+JavaScript'te "mutate" kelimesi, bir değişkenin değerinin değiştirilmesi anlamına gelir. Yani, bir değişkenin içeriği değiştirildiğinde, bu değişken "mutate" edilir. Bu, özellikle mutable veri tipleri (örneğin, dizi veya nesne) ile ilgili bir kavramdır, çünkü bu tür veri tiplerinin içeriği doğrudan değiştirilebilir. Immutable veri tipleri (örneğin, string veya number) ise değiştirilemezdir, bu nedenle değerleri değiştirilemez ve "mutate" edilemez.
 
 ### Render 
-Ekrana yazdırma.
+
+JavaScript'te "render", bir web sayfası veya uygulamanın görsel arayüzünün oluşturulması veya güncellenmesi sürecidir. Genellikle React, Vue veya Angular gibi JavaScript çerçevelerinde kullanılır.
+
+Render işlemi, belirli bir duruma (state) ve/veya belirli bir veri kaynağına (props) dayanarak, bir bileşenin veya bir sayfanın HTML, CSS ve JavaScript kodunu oluşturur. Bu kod daha sonra web tarayıcısı tarafından yorumlanarak, kullanıcıların görüntüleyebileceği bir web sayfası olarak sunulur.
+
+Render işlemi, kullanıcının etkileşimleriyle birlikte, sayfa veya uygulama içindeki bileşenlerin durumlarının değişmesiyle de tetiklenebilir. Bu durumda, render işlemi otomatik olarak yenilenir ve sayfa veya uygulama görüntüsü güncellenir.
 
 ### Re-render
-Ekrana tekrar yazdırma.
+
+React.js gibi bir kütüphane veya framework kullanılarak geliştirilen web uygulamalarında, bir bileşen (component) belirli bir durumda (state) olabilir. Bu durum, kullanıcının etkileşimi veya başka bir olay tarafından tetiklenebilir ve bileşenin yeniden render edilmesi gerekebilir. Bu yeniden render işlemi, bileşenin arayüzünün güncellenmesini sağlar ve yeni duruma göre yeniden oluşturulur. Bu sürece re-rendering denir.
+
+Örneğin, bir sayfadaki bir bileşen, bir butona tıklama gibi bir kullanıcı etkileşimi sonrasında yeniden render edilebilir ve belirli bir duruma geçebilir. Bu durumda, bileşenin state'indeki değişikliklere göre, React bileşenleri arayüzünü yeniden oluşturur ve günceller.
 
 ### Immediate Re-Export
-Anında yeniden dışa aktarma
+
+JavaScript'te "Immediate Re-Export", modüllerin yeniden kullanılabilirliğini artırmak için kullanılan bir modüller sistemidir.
+
+Bu sistemde, bir modülün içeriği başka bir modül tarafından yeniden kullanılabilecek şekilde hızlıca yeniden ihraç edilebilir. Bu yöntem, gerekli fonksiyonları ve verileri içeren ayrı bir dosya oluşturmak yerine, daha küçük, yeniden kullanılabilir parçalar halinde kod yazmanızı sağlar.
+
+Örneğin, bir "helperFunctions.js" dosyası oluşturabilirsiniz ve bu dosyadaki işlevleri başka bir modülde yeniden kullanmak isteyebilirsiniz. Bunun yerine, "helperFunctions.js" dosyasını yeniden ihraç edebilirsiniz ve diğer modülde doğrudan kullanabilirsiniz. Bu, kodunuzu daha modüler hale getirir ve tekrar kullanılabilirliğini artırır.
+
 
 ### Ternary Conditional Operators
-Üç değişkenli koşul operatörleri
+
+Ternary conditional operators, bir koşulun doğru veya yanlış olduğunu kontrol eden bir ifade tipidir. Bu ifade, bir koşul ifadesi, bir doğru ifadesi ve bir yanlış ifadesi içerir.
+
+Kısaca şu şekilde yazılabilir:
+
+koşul ? doğru ifade : yanlış ifade;
+
+Burada koşul ifadesi, kontrol edilecek koşulu ifade eder. Eğer bu koşul doğru ise, doğru ifade çalıştırılır, aksi takdirde yanlış ifade çalıştırılır.
+
+Örneğin:
+let sayi = 10;
+let sonuc = sayi > 0 ? "Sayı pozitif" : "Sayı negatif veya sıfır";
+console.log(sonuc); // Sayı pozitif
+Bu örnekte, sayi > 0 koşulu kontrol edilir. Bu koşul doğru olduğu için, sonuc değişkenine "Sayı pozitif" atanır ve console.log ifadesi ile sonuç ekrana yazdırılır.
 
 ### Statement
 
+JavaScript'te statement (ifade) bir işlemi tanımlayan ve uygulayan bir kod satırıdır. JavaScript programları birçok farklı statement kullanır.
+
+Örneğin, atama işlemi yapan statement (ifade) şu şekildedir:
+
+let x = 5;
+
+Fonksiyon çağırma statement'i (ifade) ise şu şekildedir:
+
+console.log("Hello, World!");
+
+Bir döngü (loop) oluşturma statement'i (ifade) şu şekildedir:
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+Bu örneklerde gördüğümüz gibi, statement'ler farklı amaçlar için kullanılabilir ve JavaScript programlarında çok sık kullanılırlar.
+
 ### Expression
 
+JavaScript'te expression (ifade), bir değerin üretildiği ve bir işlemi gerçekleştirdiği kod bloğudur. Bir expression, bir değişkene atanabilir, bir fonksiyonun argümanı olarak kullanılabilir veya bir kontrol yapısının içinde kullanılabilir.
+
+Örnek olarak, aşağıdaki expressionlar mevcuttur:
+
+3 + 4
+"Hello " + "world"
+true && false
+(function() { return "Merhaba dünya"; })()
+Bu ifadelerin her biri, bir değer döndüren bir işlemi gerçekleştirir. Örneğin, ilk ifade "3 + 4" toplama işlemi gerçekleştirir ve sonucu "7" döndürür. İkinci ifade, iki string ifadeyi birleştirir ve sonucu "Hello world" string'ini döndürür.
+
+Bir değişkenin değerini tanımlamak, bir fonksiyonun geri dönüş değerini belirlemek, bir dizi veya nesne öğesinin değerini almak veya bir işlemi gerçekleştirmek gibi birçok durumda expressionlar kullanılabilir.
+
 ### Declaration
+
+JavaScript'te bir deklarasyon, değişken, sabit veya fonksiyonun tanımlanmasıdır. Bu, ilgili değişkenin veya fonksiyonun kullanılabilmesi için bir isim ataması yapar.
+
+Örneğin, bir değişkenin deklarasyonu aşağıdaki gibi olabilir:
+let x;
+Bu deklarasyon, x adında bir değişkenin tanımlandığını ve kullanılabileceğini belirtir. Ancak bu deklarasyon, değişkenin bir değer atanması veya başlatılması anlamına gelmez.
+
+Bir fonksiyonun deklarasyonu ise aşağıdaki gibi olabilir:
+
+function myFunction() {
+  // fonksiyon kodları
+}
+
+Bu deklarasyon, myFunction adında bir fonksiyonun tanımlandığını ve kullanılabileceğini belirtir. Bu fonksiyon, çağrıldığında fonksiyon kodlarını çalıştıracaktır.
+
+Kısacası, bir deklarasyon, bir değişkenin veya fonksiyonun tanımlandığını belirtir ve ilgili adın kullanılabilmesi için bir atama yapar.
 
 ### Component(React)
 
