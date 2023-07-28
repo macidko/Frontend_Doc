@@ -928,7 +928,23 @@ Bu deklarasyon, myFunction adında bir fonksiyonun tanımlandığını ve kullan
 Kısacası, bir deklarasyon, bir değişkenin veya fonksiyonun tanımlandığını belirtir ve ilgili adın kullanılabilmesi için bir atama yapar.
 
 ### Component(React)
+Component (Bileşen), React'ta kullanıcı arayüzünü oluşturan ve kendine özgü işlevselliği olan bağımsız bir yapıdır. Bir bileşen, çıktı olarak JSX (JavaScript XML) adı verilen özel bir sözdizimini kullanarak render edilir ve kullanıcı arayüzünde görsel öğeleri temsil eder. Bileşenler, içerisinde bulunduğu diğer bileşenlerle birleştirilerek karmaşık bir yapı oluşturur.
+````
+import React from 'react';
 
+// Basit fonksiyonel bileşen tanımı
+const SimpleComponent = () => {
+  return (
+    <div>
+      <h1>Merhaba, Dünya!</h1>
+      <p>Bu en basit React bileşenidir.</p>
+    </div>
+  );
+};
+
+export default SimpleComponent;
+
+````
 ### Props(React)
 
 ### State(React)
