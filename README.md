@@ -1,6 +1,8 @@
 # ****Aldığım notları yazdığım, yeni öğrendiklerimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
 
-## Değişken (Variable):
+<details>
+  <summary>Click to expand</summary>
+  ## Değişken (Variable):
 Değerlerin depolanması için kullanılan yapıdır. JavaScript'te değişkenler var, let ve const anahtar kelimeleri ile tanımlanabilir.
 ```
 let firstName = "John";
@@ -1705,3 +1707,5 @@ Bir olayı dinleyen HTML elemanını döndürür.
 ### Dosya İşlemleri
 ### Şifreleme ve Güvenlik
 ### Diğer Özellikler ve Fonksiyonlar
+
+</details>
