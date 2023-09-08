@@ -427,6 +427,797 @@
 </details>
 
 
+<details>
+  <summary>Webpack</summary>
+  # Webpack
+
+- **Webpack Nedir ve Neden Kullanılır?**
+    - [ ]  Webpack'in temel amacını ve modern web geliştirme süreçlerindeki rolünü anlayın.
+    - [ ]  Modüler geliştirme ve kaynak yönetimi avantajlarına göz atın.
+- **Proje Ortamının Hazırlanması:**
+    - [ ]  Yeni bir projede Webpack'i nasıl kullanacağınızı öğrenin.
+    - [ ]  Webpack kurulumu ve temel proje yapılandırmasını gerçekleştirin.
+- **Webpack Temel Kavramları:**
+    - [ ]  Entry, output, loader, plugin gibi temel Webpack kavramlarını anlayın.
+    - [ ]  Bir Webpack yapılandırma dosyasının (webpack.config.js) temel bileşenlerini öğrenin.
+- **Modüler Geliştirme ve ES6 Modülleri:**
+    - [ ]  ES6 modüllerini Webpack ile nasıl kullanacağınızı anlayın.
+    - [ ]  Modüler geliştirme yaklaşımının avantajlarını öğrenin.
+- **Asset Yönetimi ve Loader'lar:**
+    - [ ]  Farklı türdeki dosyaları (CSS, resimler, fontlar) nasıl işleyeceğinizi öğrenin.
+    - [ ]  Loader'lar aracılığıyla dosyaları nasıl dönüştüreceğinizi ve optimize edeceğinizi anlayın.
+- **CSS ve Stil Yönetimi:**
+    - [ ]  CSS dosyalarını Webpack üzerinden nasıl yönetebileceğinizi öğrenin.
+    - [ ]  CSS loader'ı ile stil dosyalarını projenize nasıl entegre edeceğinizi öğrenin.
+- **HTML ve Dinamik Sayfa Oluşturma:**
+    - [ ]  HTML dosyalarını Webpack üzerinde nasıl yönetebileceğinizi anlayın.
+    - [ ]  HTMLWebpackPlugin kullanarak dinamik olarak oluşturulan HTML sayfaları nasıl oluşturacağınızı öğrenin.
+- **Uygulama Derleme ve Çıktı Yönetimi:**
+    - [ ]  Projenizdeki kaynakları Webpack ile nasıl derleyeceğinizi ve çıktıya nasıl alacağınızı öğrenin.
+    - [ ]  Derleme sonuçlarını optimize ederek hızlı ve etkili bir çıktı almayı öğrenin.
+- **Plugin Kullanımı ve Özelleştirmeler:**
+    - [ ]  Webpack plugin'lerini nasıl kullanacağınızı öğrenin.
+    - [ ]  Popüler plugin'leri projelerinize nasıl entegre edeceğinizi öğrenin.
+- **Geliştirme ve Üretim Ortamları:**
+    - [ ]  Geliştirme sırasında hızlı geri bildirim ve canlı yeniden yükleme (live reloading) nasıl sağlanır öğrenin.
+    - [ ]  Üretim sürümü için Webpack yapılandırmasını nasıl optimize edeceğinizi anlayın.
+- **Webpack Mülkiyet Analizi ve Optimizasyonu:**
+    - [ ]  Projenizdeki bağımlılıkları ve kullanılan modülleri nasıl analiz edeceğinizi öğrenin.
+    - [ ]  Gereksiz veya çok büyük modülleri tespit ederek projenizin performansını nasıl artıracağınızı keşfedin.
+- **Code Splitting ve Dinamik İthalat:**
+    - [ ]  Webpack ile kod parçalama (code splitting) nasıl yapacağınızı anlayın.
+    - [ ]  Dinamik import'lar ile uygulamanızın yük hızını nasıl optimize edeceğinizi öğrenin.
+- **Advanced Loader Kullanımı ve Özelleştirmeler:**
+    - [ ]  Loader'ları nasıl özelleştirebileceğinizi ve karmaşık senaryolarda nasıl kullanacağınızı öğrenin.
+    - [ ]  Babel loader'ı ile karmaşık JavaScript dönüşümleri nasıl yapabileceğinizi öğrenin.
+- **Webpack ve CSS Preprocessing Entegrasyonu:**
+    - [ ]  SASS, LESS veya Stylus gibi CSS ön işlemcileri ile Webpack'i nasıl entegre edeceğinizi öğrenin.
+    - [ ]  CSS preprocessors ile stil kodlarını nasıl yöneteceğinizi ve optimize edeceğinizi anlayın.
+- **Webpack ve Modern JavaScript Özellikleri:**
+    - [ ]  ES6+ ve sonraki JavaScript özelliklerini nasıl Webpack ile kullanabileceğinizi öğrenin.
+    - [ ]  Babel ve Webpack'i entegre ederek modern JavaScript kodlarını desteklemeyi öğrenin.
+- **Module Federation ve Mikroservis Entegrasyonu:**
+    - [ ]  Module Federation konseptini öğrenerek mikroservis mimarisine nasıl uygun Webpack yapılandırmaları yapacağınızı keşfedin.
+    - [ ]  Birden fazla uygulamanın bileşenlerini nasıl paylaşabileceğinizi öğrenin.
+- **Webpack ve Modern Çıktı Formatları:**
+    - [ ]  WebAssembly, modern JavaScript modülleri gibi farklı çıktı formatlarını nasıl kullanabileceğinizi anlayın.
+    - [ ]  Webpack'in farklı platformlar için nasıl optimize edildiğini öğrenin.
+- **Dynamic Import, Lazy Loading ve Prefetching:**
+    - [ ]  Dinamik import'lar ile nasıl lazy loading yapacağınızı ve sayfa yükleme hızını nasıl artıracağınızı öğrenin.
+    - [ ]  Prefetching ile kullanıcının ihtiyacı olmadan önce sayfaları nasıl ön yükleyeceğinizi öğrenin.
+- **Webpack ve Uygulama Analizi:**
+    - [ ]  Uygulamanızın performansını nasıl izleyeceğinizi ve analiz edeceğinizi öğrenin.
+    - [ ]  Webpack Bundle Analyzer gibi araçlarla projenizdeki kaynakları nasıl optimize edeceğinizi öğrenin.
+- **Webpack ve DevOps Entegrasyonu:**
+    - [ ]  Webpack'i süreklilik akışına nasıl entegre edeceğinizi öğrenin.
+    - [ ]  Üretim sürümleri, testler ve dağıtım süreçlerini nasıl optimize edeceğinizi anlayın.
+</details>
+
+<details>
+  <summary>ESLint</summary>
+  # ESLint
+
+- **ESLint Nedir ve Nasıl Kurulur?**
+    - ESLint'in amacı ve önemi
+    - Proje kökünde ESLint kurulumu
+    - Yerel ve global kurulum
+- **ESLint Konfigürasyonu ve Ayar Dosyası:**
+    - **`.eslintrc`** dosyasının oluşturulması
+    - Kuralların ve ayarların belirlenmesi
+    - Standart Ayar Kümeleri (Airbnb, Standard, vb.) kullanımı
+- **Temel ESLint Kuralları ve Ayarları:**
+    - İndentasyon ve girinti ayarları
+    - Çift veya tek tırnak kullanımı
+    - Noktalı virgül gerekliliği
+    - Boşluk ve satır araları kuralları
+- **Özel Kuralların Eklenmesi ve Değiştirilmesi:**
+    - Kuralların değiştirilmesi veya devre dışı bırakılması
+    - Projeye özgü kuralların eklenmesi
+    - Özel kuralların hata seviyeleri
+- **Terminal ve Editör Entegrasyonu:**
+    - ESLint'i terminalden çalıştırma
+    - Editör eklentileri ile kod denetimi
+    - Otomatik düzeltme seçenekleri
+- **Dosya ve Klasör İgnorlama:**
+    - **`.eslintignore`** dosyasıyla dosya/klasörlerin atlanması
+    - Test veya üretim klasörlerinin denetimi dışında bırakılması
+- **ESLint ile Otomatik Kod Düzeltme:**
+    - Otomatik düzeltme modunun kullanılması
+    - Düzeltilebilir hataların otomatik olarak çözülmesi
+- **Proje Entegrasyonu ve Süreklilik (CI/CD) Akışı:**
+    - ESLint'in GitHub veya diğer CI/CD araçlarına entegrasyonu
+    - Hata çıktıları ve raporların kullanımı
+- **Özelleştirilmiş Kurallar ve Pluginler:**
+    - Özel kuralların oluşturulması
+    - Varolan kuralların özelleştirilmesi
+    - Üçüncü taraf pluginlerin entegrasyonu
+- **Preset Kullanımı ve Özelleştirme:**
+    - Önceden belirlenmiş kurallar kümesi (preset) kullanımı
+    - Preset kurallarının düzenlenmesi veya devre dışı bırakılması
+- **ESLint Hooks ve Git Commit Denetimi:**
+    - **`pre-commit`** ve **`pre-push`** kancalarıyla kod denetimi
+    - Sadece değiştirilmiş dosyaların denetlenmesi
+- **Yazılım Mimarisi ve Projeler Arası Kullanım:**
+    - Modüler projelerde ESLint yapılandırması
+    - Tek bir projede birden fazla ESLint kurallarının yönetimi
+- **Eş Zamanlı Düzenleme Uyarıları:**
+    - ESLint ile çalışırken diğer editörlerde düzenleme yaparken uyarıların görüntülenmesi
+- **Uyumlu Modül Sistemi Ayarları:**
+    - CommonJS, ES6 ve diğer modül sistemlerine uygun ayarlamalar
+- **Özelleştirilmiş Raporlama ve Çıktılar:**
+    - ESLint çıktısının raporlama formatının özelleştirilmesi
+    - Kendi hatalarınıza özel mesajlar eklenmesi
+- **ESLint İntegrasyonunun İleri Seviye Araçlarla Kullanımı:**
+    - Linting sonuçlarının dashboardlarda görüntülenmesi (örn. SonarQube)
+    - Süreklilik akışı içinde otomatik düzeltme ve test entegrasyonu
+- **Takım İçi Standartların Oluşturulması ve Uygulanması:**
+    - Proje ekibinde aynı kod standartlarının kullanılmasının sağlanması
+    - Ortak ESLint yapılandırmalarının ve kuralların paylaşımı
+- **ESLint Entegrasyonuyla Otomasyon:**
+    - Örneklerle Git Hook'ları ve CI/CD araçlarıyla otomatik linting ve düzeltme akışları
+</details>
+
+<details>
+  <summary>Babel</summary>
+  # Babel
+
+- **Babel Nedir ve Neden Kullanılır?**
+    - Babel'in temel amacını ve modern JavaScript kodlarının tarayıcılar arasında nasıl uyumlu hale getirildiğini anlayın.
+    - Eski tarayıcılarla uyumlu kod oluşturma ihtiyacını öğrenin.
+- **Babel Kurulumu ve Temel Ayarlar:**
+    - Bir projeye Babel'i nasıl entegre edeceğinizi ve kurulumun nasıl yapıldığını öğrenin.
+    - **`.babelrc`** dosyası ile temel ayarları nasıl yapılandıracağınızı anlayın.
+- **Babel ve ES6+ Dönüşümleri:**
+    - ES6+ (ECMAScript 2015+) kodlarını nasıl daha eski JavaScript versiyonlarına dönüştüreceğinizi öğrenin.
+    - Arrow fonksiyonlar, destructuring, let-const kullanımı gibi özelliklerin nasıl dönüştürüldüğünü anlayın.
+- **Babel ve Modül Sistemi:**
+    - ES6 modül formatını CommonJS veya AMD gibi farklı modül sistemlerine nasıl dönüştüreceğinizi öğrenin.
+    - Module exports ve imports'un nasıl dönüştürüldüğünü anlayın.
+- **Babel Preset'leri ve Plugin'leri:**
+    - Babel'in standart dönüşümlerini içeren preset'leri nasıl kullanacağınızı öğrenin.
+    - Özel dönüşümler için nasıl plugin'ler ekleyebileceğinizi anlayın.
+- **Polyfill ve Tarayıcı Uyumluluğu:**
+    - Polyfill'leri nasıl kullanarak tarayıcı uyumluluğunu artıracağınızı öğrenin.
+    - Babel ile modern özellikleri eski tarayıcılarda nasıl destekleyebileceğinizi öğrenin.
+- **Babel CLI ve Komut Satırı Kullanımı:**
+    - Babel'i komut satırında nasıl kullanabileceğinizi öğrenin.
+    - Dosyaları dönüştürmek ve çıktı almak için Babel CLI'nin temel komutlarını keşfedin.
+- **Webpack ve Babel Entegrasyonu:**
+    - Webpack ile Babel'i nasıl entegre edeceğinizi ve projenizde nasıl kullanacağınızı öğrenin.
+    - Modern JavaScript kodları ile Babel dönüşümlerini nasıl birleştireceğinizi anlayın.
+- **Geliştirme Ortamında Babel Kullanımı:**
+    - Geliştirme sırasında Babel'i nasıl kullanabileceğinizi öğrenin.
+    - Hot module replacement (HMR) gibi geliştirme hızını artıran özellikleri kullanmayı öğrenin.
+- **Babel ve React Entegrasyonu:**
+    - React projelerinde Babel'i nasıl kullanacağınızı ve JSX dönüşümlerini nasıl yapacağınızı öğrenin.
+    - Babel ile React uygulamalarını nasıl optimize edeceğinizi anlayın.
+- **Custom Babel Plugin Geliştirme:**
+    - Kendi özel Babel plugin'lerinizi nasıl geliştirebileceğinizi öğrenin.
+    - AST (Abstract Syntax Tree) yapısını anlayarak dönüşümler gerçekleştirme yöntemlerini öğrenin.
+- **AST Analizi ve Manipülasyonu:**
+    - Babel tarafından oluşturulan AST yapısını nasıl analiz edeceğinizi ve manipüle edeceğinizi öğrenin.
+    - Programatik olarak kodları nasıl değiştirebileceğinizi anlayın.
+- **Dynamic Import ve Code Splitting Dönüşümleri:**
+    - Dinamik import'lar ve kod parçalama (code splitting) senaryolarını nasıl ele alabileceğinizi öğrenin.
+    - Projenizde dinamik import'ları nasıl optimize edeceğinizi keşfedin.
+- **Babel ve Decorator Kullanımı:**
+    - Decorator'ları nasıl kullanabileceğinizi ve dönüştürebileceğinizi öğrenin.
+    - Decorator'larla kodları nasıl genişletebileceğinizi anlayın.
+- **Babel ve Uygulama Analizi:**
+    - Babel ile oluşturulan çıktıları nasıl analiz edeceğinizi ve projenizdeki dönüşümleri nasıl izleyeceğinizi öğrenin.
+    - Babel tarafından üretilen çıktının performansını ve kalitesini nasıl değerlendireceğinizi öğrenin.
+- **WebPack ve Babel Optimize Edilmiş Projeler:**
+    - Babel'i Webpack ile nasıl entegre edip optimize edilmiş projeler oluşturabileceğinizi öğrenin.
+    - Geliştirme ve üretim sürümleri için Babel ve Webpack'i nasıl yapılandırmanız gerektiğini öğrenin.
+- **Module Resolution ve Path Mapping:**
+    - Babel'da modül çözümlemesini (module resolution) nasıl yöneteceğinizi öğrenin.
+    - Alias ve path mapping ile modül yollarını nasıl daha kolay yönetebileceğinizi anlayın.
+- **Babel ve Çevirici Araçlar Entegrasyonu:**
+    - Babel'i çevirici araçlarla (transpiler tools) nasıl entegre edebileceğinizi öğrenin.
+    - Projenizde Babel'i kullanarak farklı dil özelliklerini nasıl destekleyeceğinizi öğrenin.
+- **Syntax Plugin'leri ve Özelleştirme:**
+    - Babel syntax plugin'leri ile dil özelliklerini nasıl genişletebileceğinizi öğrenin.
+    - Özelleştirilmiş dönüşümler ve dil özellikleri ekleyerek kodu nasıl geliştirebileceğinizi anlayın.
+- **Polyfill ve Kod Entegrasyonu:**
+    - Projenizde Babel polyfill'lerini nasıl kullanacağınızı ve tarayıcı uyumluluğunu nasıl artıracağınızı öğrenin.
+    - Babel ile polyfill'leri nasıl entegre edeceğinizi anlayın.
+</details>
+
+<details>
+  <summary>Cypress</summary>
+  # Cypress
+
+Cypress, web uygulamalarının otomasyon testlerini yazmak ve çalıştırmak için kullanılan popüler bir JavaScript tabanlı test otomasyon aracıdır
+
+1. **Cypress Kurulumu:**
+    - Node.js'in kurulu olduğundan emin olun.
+    - Projenizin kök dizininde **`npm install cypress`** veya **`yarn add cypress`** komutunu kullanarak Cypress'ı projenize ekleyin.
+    - Cypress'ı başlatmak için **`npx cypress open`** komutunu kullanın.
+2. **İlk Testi Oluşturma:**
+    - Cypress ile bir test dosyası oluşturun ve temel bir test senaryosu yazın.
+    - Test senaryosunu **`it`** blokları içine yazarak başlayın.
+    - Web tarayıcısını açın, bir URL'ye gitmeyi simüle edin ve birkaç basit eylem gerçekleştirin (tıklama, yazma vb.).
+3. **Assert (Doğrulama):**
+    - Cypress ile bir sayfada bulunan öğeleri seçin (örneğin, **`cy.get()`** ile).
+    - Seçilen öğelerin beklenen durumlarını doğrulayın (örneğin, **`should`** komutu ile).
+4. **Test Raporları:**
+    - Cypress'ın kendi içinde sağladığı test raporlarını inceleyin.
+    - İşlevselliği daha iyi anlamak için hata durumlarını kontrol edin.
+5. **Test Konfigürasyonu:**
+    - Cypress'ı özelleştirmek için **`cypress.json`** dosyasını kullanın.
+    - Tarayıcı seçeneklerini, başlangıç URL'sini ve diğer yapılandırmaları burada ayarlayabilirsiniz.
+
+**İleri Düzey Cypress JS Çalışma Başlıkları:**
+
+1. **Custom Commands (Özel Komutlar):**
+    - Kendi özel komutlarınızı tanımlayarak testlerinizi daha okunabilir ve yeniden kullanılabilir hale getirin.
+2. **Fixture Data (Veri Görseli):**
+    - Dışarıdan veri yüklemek için Fixture dosyalarını kullanmayı öğrenin.
+3. **Page Object Model (Sayfa Nesnesi Modeli):**
+    - Büyük ve karmaşık test senaryolarını daha iyi organize etmek için Page Object Model (POM) kullanmayı öğrenin.
+4. **API Testleri:**
+    - Cypress ile API testleri yazmayı ve uygulamanızın arka uç hizmetlerini test etmeyi öğrenin.
+5. **Çoklu Tarayıcı Desteği:**
+    - Cypress ile farklı tarayıcıları (Chrome, Firefox, Edge vb.) kullanarak testleri çalıştırmayı deneyin.
+6. **Eşzamanlı Testler:**
+    - Paralel test çalıştırmayı öğrenerek test sürelerini hızlandırın.
+7. **Test Veri Yönetimi:**
+    - Dinamik verileri test senaryolarınıza nasıl dahil edeceğinizi ve yöneteceğinizi öğrenin.
+8. **CI/CD Entegrasyonu:**
+    - CI/CD araçları ile Cypress testlerini nasıl entegre edeceğinizi öğrenin (örneğin, Jenkins, Travis CI, CircleCI vb.).
+</details>
+
+<details>
+  <summary>MobX</summary>
+  # MobX
+
+MobX, JavaScript uygulamalarında durum yönetimi için kullanılan bir durum yönetimi kütüphanesidir.
+
+**Başlangıç Düzeyi MobX Çalışma Başlıkları:**
+
+1. **MobX Temel Kavramlar:**
+    - MobX nedir ve neden kullanılır?
+    - MobX ile reaktif programlamanın temel kavramlarını anlayın.
+2. **MobX Kurulumu:**
+    - Bir projeye MobX'i nasıl ekleyeceğinizi ve konfigüre edeceğinizi öğrenin.
+    - npm veya yarn gibi paket yöneticilerini kullanarak MobX kurulumunu gerçekleştirin.
+3. **Durum (State) Yönetimi:**
+    - MobX ile uygulamanızın durumunu nasıl yöneteceğinizi öğrenin.
+    - Gözlemlenebilir durum nesneleri (observable state objects) oluşturmayı ve değiştirmeyi inceleyin.
+4. **Reaksiyonlar ve Tepkiler (Reactions):**
+    - MobX ile reaksiyonlar (reactions) oluşturmayı ve durum değişikliklerine nasıl tepki vereceğinizi öğrenin.
+    - **`autorun`**, **`when`**, **`reaction`** gibi reaksiyon türlerini inceleyin.
+5. **Eylemler (Actions):**
+    - MobX eylemleri (actions) ile durumu nasıl değiştireceğinizi öğrenin.
+    - **`action`**, **`runInAction`**, **`flow`** gibi eylem türlerini kullanmayı inceleyin.
+
+**İleri Düzey MobX Çalışma Başlıkları:**
+
+1. **Türetilmiş Durum ve Türetilmiş Veri (Computed State and Derivations):**
+    - MobX ile türetilmiş durumları ve verileri nasıl oluşturacağınızı öğrenin.
+    - **`@computed`**, **`@derive`** gibi türetilmiş verileri inceleyin.
+2. **Dış Verileri Entegre Etme:**
+    - MobX'i API çağrıları, WebSocket bağlantıları ve dış veri kaynakları ile nasıl entegre edeceğinizi öğrenin.
+    - MobX'ı Redux veya GraphQL ile nasıl birleştireceğinizi inceleyin.
+3. **Seri Hata İşleme ve Hata Ayıklama:**
+    - MobX ile hataları nasıl işleyebileceğinizi ve hata ayıklama süreçlerini nasıl iyileştirebileceğinizi öğrenin.
+4. **MobX ve React Entegrasyonu:**
+    - MobX ile React uygulamalarını nasıl entegre edeceğinizi öğrenin.
+    - MobX React'i kullanarak bileşenlerinizi nasıl bağlayacağınızı inceleyin.
+5. **Performans İyileştirmeleri:**
+    - MobX performansını artırmak için öğeleri nasıl memoize edeceğinizi ve seçici yeniden işleme nasıl izin vereceğinizi öğrenin.
+6. **MobX Proje Yapılandırması ve Mimari:**
+    - Büyük ölçekli projeler için MobX mimari ve proje yapılandırmasını nasıl optimize edeceğinizi inceleyin.
+</details>
+
+<details>
+  <summary>GraphQL</summary>
+  # GraphQL
+
+GraphQL, API geliştirmek ve sorgulamak için kullanılan bir veri sorgulama dilidir.
+
+**Başlangıç Düzeyi GraphQL Çalışma Başlıkları:**
+
+1. **GraphQL Temel Kavramlar:**
+    - GraphQL'in ne olduğunu ve neden kullanıldığını anlayın.
+    - GraphQL terminolojisi ve temel kavramları öğrenin (Sorgu, Mutasyon, Şema, Alanlar vb.).
+2. **GraphQL Sorguları:**
+    - GraphQL sorgularını nasıl oluşturacağınızı öğrenin.
+    - Alanlar, parametreler ve dönen veriler hakkında temel bilgi edinin.
+3. **GraphQL Şemaları ve Tip Tanımları:**
+    - GraphQL şemalarını nasıl oluşturacağınızı ve tip tanımlarını nasıl kullanacağınızı öğrenin.
+    - Özel tipler ve bağlantılar oluşturma yeteneklerini inceleyin.
+4. **GraphQL Sunucu Kurulumu:**
+    - Node.js, Express veya başka bir sunucu çerçevesi kullanarak GraphQL sunucusu nasıl kurulacağınızı öğrenin.
+    - GraphQL sorgularını işlemek için GraphQL middleware veya kütüphanelerini nasıl kullanacağınızı anlayın.
+5. **GraphQL İstemcileri:**
+    - GraphQL sorgularını göndermek ve yanıtları işlemek için GraphQL istemcilerini (Apollo Client, Relay, vs.) nasıl kullanacağınızı öğrenin.
+
+**İleri Düzey GraphQL Çalışma Başlıkları:**
+
+1. **GraphQL Mutasyonları:**
+    - GraphQL mutasyonlarını kullanarak veri değişikliklerini nasıl yapacağınızı öğrenin.
+    - Sunucu tarafında veri güncelleme ve silme işlemleri nasıl gerçekleştirilir.
+2. **Fragmentlar ve Fragmant Spread'leri:**
+    - GraphQL fragmentlarını nasıl kullanacağınızı öğrenin.
+    - Fragmanlarla tekrar kullanılabilir sorgular oluşturmayı anlayın.
+3. **Derinlemesine Sorgular:**
+    - GraphQL ile derinlemesine sorgular (nested queries) nasıl oluşturacağınızı öğrenin.
+    - İlgili verileri tek bir sorguda nasıl alabileceğinizi inceleyin.
+4. **GraphQL Güvenliği:**
+    - GraphQL sorgularını güvence altına almak için güvenlik önlemlerini öğrenin.
+    - Veri sızıntısı ve sorgu taşımalarını nasıl engelleyeceğinizi anlayın.
+5. **GraphQL Performans İyileştirmeleri:**
+    - GraphQL sorgularını optimize etmek için sorgu analizi ve veri önbelleği kullanmayı öğrenin.
+    - Veri isteği ve gönderimini nasıl azaltacağınızı inceleyin.
+6. **GraphQL ve Microservices:**
+    - GraphQL'i mikroservis mimarileri ile nasıl kullanabileceğinizi öğrenin.
+    - Çeşitli hizmetlerden veri birleştirme tekniklerini inceleyin.
+7. **Subscription'lar (Abonelikler):**
+    - GraphQL aboneliklerini kullanarak gerçek zamanlı veri akışlarını nasıl oluşturacağınızı öğrenin.
+    - WebSocket ve Push tekniklerini inceleyin.
+</details>
+<details>
+  <summary>Docker</summary>
+  # Docker
+
+Docker, konteyner teknolojisi kullanarak uygulamaların hızlı ve taşınabilir bir şekilde çalıştırılmasını sağlayan bir platformdur. 
+
+**Başlangıç Düzeyi Docker Çalışma Başlıkları:**
+
+1. **Docker Temel Kavramlar:**
+    - Docker nedir ve neden kullanılır?
+    - Konteyner kavramı, Docker imajları ve Docker konteynerleri gibi temel kavramları öğrenin.
+2. **Docker Kurulumu:**
+    - İşletim sisteminize uygun şekilde Docker'ı nasıl kuracağınızı öğrenin.
+    - Docker Engine ve Docker Compose gibi araçları nasıl yükleyeceğinizi anlayın.
+3. **Docker Konteynerleri Oluşturma:**
+    - Dockerfile kullanarak kendi Docker imajlarınızı nasıl oluşturacağınızı öğrenin.
+    - İmajlarınızı nasıl inşa edip, sürümleyip ve paylaşabileceğinizi inceleyin.
+4. **Konteynerleri Çalıştırma ve Yönetme:**
+    - Docker komutları ile konteynerleri nasıl başlatacağınızı ve yöneteceğinizi öğrenin.
+    - Çalışan konteynerleri nasıl gözden geçireceğinizi ve durduracağınızı anlayın.
+5. **Konteyner İçinde Uygulama Yönetimi:**
+    - Konteynerler içinde uygulamaları nasıl yükleyeceğinizi ve yapılandıracağınızı öğrenin.
+    - Docker içindeki uygulamaların bağlantılarını ve iletişimini nasıl sağlayacağınızı inceleyin.
+
+**İleri Düzey Docker Çalışma Başlıkları:**
+
+1. **Docker Compose ve Çoklu Konteyner Uygulamaları:**
+    - Docker Compose kullanarak çoklu konteynerli uygulamaları nasıl tanımlayacağınızı ve yöneteceğinizi öğrenin.
+    - Birden fazla servisin nasıl bir arada çalıştırılacağını inceleyin.
+2. **Konteyner Ağı ve İletişim:**
+    - Docker ağlarını nasıl oluşturacağınızı ve konteynerler arasında nasıl iletişim kuracağınızı öğrenin.
+    - İç ağlar, dışarıdan erişim ve port yönlendirmesi gibi konuları inceleyin.
+3. **Docker Güvenliği ve İzolasyon:**
+    - Konteynerler arasında güvenlik ve izolasyon sağlama stratejilerini öğrenin.
+    - Güvenlik en iyi uygulamaları, imza doğrulama ve saldırı tespitini inceleyin.
+4. **Konteyner İzleme ve Günlükleme:**
+    - Konteynerlerin performansını nasıl izleyeceğinizi ve günlüklerini nasıl yöneteceğinizi öğrenin.
+    - Grafana, Prometheus ve ELK yığını gibi izleme araçlarını kullanmayı inceleyin.
+5. **Docker ve Orkestrasyon Araçları:**
+    - Docker Swarm ve Kubernetes gibi orkestrasyon araçlarıyla nasıl entegre çalışacağınızı öğrenin.
+    - Büyük ölçekli uygulamaları nasıl yöneteceğinizi inceleyin.
+6. **Docker ve CI/CD Entegrasyonu:**
+    - Docker'ı sürekli entegrasyon/sürekli dağıtım (CI/CD) süreçlerinize nasıl entegre edeceğinizi öğrenin.
+</details>
+<details>
+  <summary>Axios</summary>
+  # Axios
+
+Axios, JavaScript ve Node.js uygulamalarında HTTP istekleri yapmak için kullanılan bir HTTP istemcisidir.
+
+**Başlangıç Düzeyi Axios Çalışma Başlıkları:**
+
+1. **Axios Temel Kavramlar:**
+    - Axios'un nedir ve neden tercih edildiğini anlayın.
+    - HTTP istemcileri ve Axios arasındaki farkları öğrenin.
+2. **Axios Kurulumu:**
+    - Bir projeye Axios'u eklemek için npm veya yarn gibi paket yöneticilerini kullanmayı öğrenin.
+    - Axios'un nasıl başlatılacağını ve temel yapılandırmalarını nasıl yapılacağını anlayın.
+3. **GET İstekleri:**
+    - Axios kullanarak HTTP GET istekleri nasıl gönderileceğinizi öğrenin.
+    - URL parametreleri eklemeyi ve yanıtları işlemeyi inceleyin.
+4. **POST ve Diğer HTTP İstekleri:**
+    - POST, PUT, DELETE gibi HTTP isteklerini Axios ile nasıl göndereceğinizi öğrenin.
+    - Veri gönderme, başlık ekleme ve yanıtları işleme konularını inceleyin.
+5. **Hata İşleme:**
+    - Axios ile istek sırasında ve yanıtları işlerken hata yönetimini nasıl yapılacağını öğrenin.
+
+**İleri Düzey Axios Çalışma Başlıkları:**
+
+1. **İnterseptörler (Interceptors):**
+    - Axios interseptörlerini kullanarak isteklerinizi nasıl düzenleyebileceğinizi öğrenin.
+    - İstek ve yanıtları ön işlemek ve son işlemek için interseptörlerin kullanımını inceleyin.
+2. **Axios İş Akışı ve Paralel İstekler:**
+    - Birden fazla Axios isteğini nasıl koordine edeceğinizi ve paralel isteklerin nasıl yapılacağını öğrenin.
+3. **Axios ile Dosya Yükleme ve İndirme:**
+    - Axios ile dosya yükleme (file upload) ve indirme (file download) işlemlerini nasıl gerçekleştireceğinizi öğrenin.
+4. **Axios ile Oturum Yönetimi ve Kimlik Doğrulama:**
+    - Axios ile oturum yönetimi ve kimlik doğrulama işlemlerini nasıl uygulayacağınızı inceleyin.
+5. **Axios ve Axios İnterseptörleri ile Güvenlik:**
+    - Axios ile güvenlik önlemleri ve oturum açma işlemleri nasıl gerçekleştirileceğini öğrenin.
+6. **Axios ve Axios Mock Adapter:**
+    - Axios Mock Adapter ile testlerde Axios isteklerini nasıl taklit edebileceğinizi öğrenin.
+7. **Axios ile WebSockets Entegrasyonu:**
+    - Axios ile WebSocket istemcileri ile nasıl entegrasyon yapabileceğinizi inceleyin.
+</details>
+<details>
+  <summary>AJAX</summary>
+  # AJAX
+
+AJAX (Asynchronous JavaScript and XML), web sayfalarında veri alışverişi için kullanılan önemli bir tekniktir.
+
+**Başlangıç Düzeyi AJAX Çalışma Başlıkları:**
+
+1. **Temel AJAX Kavramları:**
+    - AJAX'ın ne olduğunu ve nasıl çalıştığını anlayın.
+    - Sunucu ile istemci arasında veri alışverişi yapabilen asenkron bir teknik olduğunu kavrayın.
+2. **XMLHttpRequest Nesnesi:**
+    - **`XMLHttpRequest`** nesnesini kullanarak AJAX istekleri göndermeyi öğrenin.
+    - Veri alma, gönderme ve yanıtları işleme işlemlerini anlayın.
+3. **AJAX İstekleri Gönderme:**
+    - GET ve POST gibi farklı HTTP yöntemleri kullanarak AJAX istekleri göndermeyi öğrenin.
+    - İstek başlıklarını ve veri gövdesini ayarlayabilme yeteneğini anlayın.
+4. **AJAX Yanıtlarını İşleme:**
+    - AJAX yanıtlarını işlemek için **`XMLHttpRequest`** kullanarak veriyi çıkartmayı ve ekranda görüntülemeyi öğrenin.
+    - JSON yanıtlarını ayrıştırmayı ve kullanmayı anlayın.
+5. **Hata Yönetimi:**
+    - AJAX isteklerinde meydana gelebilecek hataları yakalayıp işlemeyi öğrenin.
+    - İstek zaman aşımı ve ağ hataları gibi durumlar için uygun hata işleme stratejilerini uygulayın.
+
+**İleri Düzey AJAX Çalışma Başlıkları:**
+
+1. **AJAX Kütüphaneleri ve Framework'leri:**
+    - jQuery, Axios, Fetch API gibi AJAX kütüphanelerini veya framework'leri kullanmayı öğrenin.
+    - Bu araçların sunduğu kolaylıkları ve avantajları keşfedin.
+2. **CORS (Cross-Origin Resource Sharing):**
+    - CORS kavramını anlayın ve farklı alan adları arasında AJAX istekleri yaparken karşılaşılan güvenlik kısıtlamalarını ele almayı öğrenin.
+3. **XML ve JSON ile Veri İşleme:**
+    - XML ve JSON formatlarını kullanarak AJAX ile veri alışverişi yapmayı öğrenin.
+    - İlgili verileri ayrıştırma ve kullanma tekniklerini geliştirin.
+4. **AJAX ile Form Gönderme:**
+    - Web formlarını AJAX ile sunucuya göndermeyi ve yanıtlarını işlemeyi öğrenin.
+    - Form doğrulama ve geri bildirim işlemlerini entegre edin.
+5. **AJAX Güvenliği:**
+    - AJAX isteklerini güvenli hale getirmek için güvenlik önlemlerini öğrenin, özellikle veri doğrulama ve oturum yönetimi.
+6. **Real-Time Uygulamalar:**
+    - WebSocket ve WebRTC gibi teknolojileri kullanarak gerçek zamanlı uygulamalar oluşturmayı öğrenin.
+7. **AJAX Entegrasyonu:**
+    - AJAX'ı farklı platformlar, hizmetler ve API'lerle entegre etmeyi öğrenin, örneğin RESTful API'ler veya GraphQL kullanımı.
+8. **Performans İyileştirmeleri:**
+    - AJAX isteklerini optimize etmek için veri ön bellekleme, istek birleştirme ve gecikme yüklemesi gibi teknikleri kullanmayı öğrenin.
+</details>
+<details>
+  <summary>Jest</summary>
+  # Jest
+
+Jest, JavaScript uygulamaları için bir test çerçevesidir ve genellikle React, Vue.js, ve Angular gibi JavaScript tabanlı uygulamaların test edilmesinde kullanılır. 
+
+**Başlangıç Düzeyi Jest Çalışma Başlıkları:**
+
+1. **Jest'in Temel Kavramları:**
+    - Jest nedir ve neden kullanılır?
+    - Test çerçevesi, asertif fonksiyonlar ve test dosyaları hakkında temel bilgileri öğrenin.
+2. **Jest Kurulumu:**
+    - Bir projeye Jest'i eklemek için Node.js ve npm veya yarn kullanarak nasıl kurulacağınızı öğrenin.
+    - Jest'i projenize yerel olarak veya global olarak kurma seçeneklerini inceleyin.
+3. **İlk Jest Testi:**
+    - Basit bir Jest testi oluşturun.
+    - Bir test dosyası oluşturun, temel asertiflerle (beklenen sonuçların kontrolü) bir test senaryosu yazın ve testi çalıştırın.
+4. **Test Klasörleri ve Modülleri:**
+    - Jest ile test dosyalarını ve test klasörlerini nasıl organize edeceğinizi öğrenin.
+    - Testlerinizi ayrı modüllerde nasıl tanımlayacağınızı inceleyin.
+5. **Test Çalıştırma ve Sonuçları:**
+    - Jest'i kullanarak testleri nasıl çalıştıracağınızı ve sonuçları nasıl inceleyeceğinizi öğrenin.
+    - Başarılı ve başarısız testleri nasıl tanımlayacağınızı anlayın.
+
+**İleri Düzey Jest Çalışma Başlıkları:**
+
+1. **Mock'lar ve Simülasyonlar:**
+    - Jest ile mocklar ve simülasyonlar oluşturmayı ve harici bağımlılıkları testlerinizden izole etmeyi öğrenin.
+2. **Asenkron Testler:**
+    - Asenkron işlemleri (AJAX istekleri, zamanlayıcılar vb.) test etmeyi öğrenin.
+    - Jest'in asenkron testlerle nasıl başa çıktığını anlayın.
+3. **Testlerin Konfigürasyonu:**
+    - Jest'i özelleştirmek için jest.config.js dosyasını nasıl kullanacağınızı öğrenin.
+    - Özel ayarlar, modülleri nasıl yükleneceği ve test çerçevesi davranışı gibi konuları ele alın.
+4. **Snapshot Testleri:**
+    - Özellikle React veya Vue.js gibi UI kitaplıkları ile çalışırken, görüntü snapshot'ları oluşturmayı ve karşılaştırmayı öğrenin.
+5. **Test Kapsamı ve Performans:**
+    - Testlerinizi optimize etmek ve yavaş testleri tanımlamak için Jest'in kapsam seçeneklerini nasıl kullanacağınızı öğrenin.
+6. **Test Otomasyonu:**
+    - Jest'i CI/CD süreçlerine nasıl entegre edeceğinizi öğrenin.
+    - Testlerin otomatik olarak nasıl çalıştırılacağını ve raporlanacağını anlayın.
+7. **Özelleştirilmiş Asertifler:**
+    - Jest'teki varsayılan asertiflerin ötesine geçerek özelleştirilmiş asertifler oluşturmayı öğrenin.
+8. **Test Deneyimi ve İyi Uygulamalar:**
+    - Jest ve testlerinizi daha etkili bir şekilde kullanmak için en iyi uygulamaları ve test deneyimini nasıl geliştirebileceğinizi öğrenin.
+</details>
+<details>
+  <summary>Tailwind</summary>
+  # Tailwind
+
+- **Tailwind CSS Nedir ve Neden Kullanılır?**
+    - [ ]  Tailwind CSS'in ne olduğunu ve geliştirme sürecini nasıl hızlandırdığını anlayın.
+    - [ ]  CSS framework'ünün temel prensiplerini kavrayın.
+- **Proje Ortamının Hazırlanması:**
+    - [ ]  Bir projeye Tailwind CSS entegrasyonunu nasıl gerçekleştireceğinizi öğrenin.
+    - [ ]  Tailwind CSS'i projenize nasıl kuracağınızı ve ayarlayacağınızı anlayın.
+- **Temel Class Kullanımı:**
+    - [ ]  Tailwind CSS'in temel sınıflarını (class'larını) nasıl kullanacağınızı öğrenin.
+    - [ ]  Grid, renkler, tipografi gibi temel stilleri uygulama.
+- **Responsive Tasarım ve Media Sorguları:**
+    - [ ]  Responsive tasarımı nasıl oluşturacağınızı ve media sorgularını nasıl kullanacağınızı anlayın.
+    - [ ]  Farklı cihaz boyutlarına göre stil ayarlamaları yapma.
+- **Flexbox ve Grid Kullanımı:**
+    - [ ]  Tailwind CSS ile nasıl kolayca flexbox ve grid yapıları oluşturabileceğinizi öğrenin.
+    - [ ]  Layout oluşturma ve hızlı bir şekilde özelleştirme yapma.
+- **Component Temelli Geliştirme:**
+    - [ ]  Tailwind CSS ile bileşen temelli bir geliştirme yaklaşımı benimseme.
+    - [ ]  Component'leri nasıl oluşturup özelleştireceğinizi öğrenin.
+- **Class Gruplamaları ve Sınıfları Özelleştirme:**
+    - [ ]  Sınıfları nasıl gruplayacağınızı ve özelleştireceğinizi öğrenin.
+    - [ ]  Kullanmadığınız sınıfları projeden nasıl kaldıracağınızı anlayın.
+- **Class Ekleme ve Çıkartma:**
+    - [ ]  Tailwind CSS'in class ekleme ve çıkartma yeteneklerini nasıl kullanacağınızı öğrenin.
+    - [ ]  Gereksiz sınıfları çıkartarak stil kodunuzu optimize etme.
+- **Custom Utility Oluşturma:**
+    - [ ]  Kendi özel utility class'larınızı nasıl oluşturacağınızı ve kullanacağınızı anlayın.
+    - [ ]  Projenize özel özellikleri Tailwind CSS ile nasıl uygulayacağınızı öğrenin.
+- **Dökümantasyon ve Kaynaklara Erişim:**
+    - [ ]  Resmi Tailwind CSS dökümantasyonunu nasıl kullanacağınızı öğrenin.
+    - [ ]  Tailwind CSS ekosistemi içindeki kaynaklardan nasıl yararlanabileceğinizi öğrenin.
+- **Özelleştirilmiş Konfigürasyon ve Ayarlar:**
+    - [ ]  Tailwind CSS'in varsayılan ayarlarını nasıl özelleştireceğinizi öğrenin.
+    - [ ]  Kendi renk paletlerinizi, font ayarlarınızı ve diğer özellikleri nasıl tanımlayacağınızı anlayın.
+- **Stil Genişletme ve Doğrusal Özelleştirmeler:**
+    - [ ]  Tailwind CSS'in sunduğu stil tabanlarını nasıl genişletebileceğinizi öğrenin.
+    - [ ]  Özel stilleri nasıl oluşturup projenizde kullanacağınızı keşfedin.
+- **Plugin Entegrasyonu ve Eklentiler:**
+    - [ ]  Tailwind CSS'e eklenti nasıl ekleyebileceğinizi öğrenin.
+    - [ ]  Popüler eklentileri projelerinize nasıl entegre edeceğinizi anlayın.
+- **Stil Kullanımı ve Temalar:**
+    - [ ]  Farklı projelerde benzer stilleri nasıl kullanabileceğinizi öğrenin.
+    - [ ]  Proje temalarını nasıl hızlı bir şekilde uygulayabileceğinizi anlayın.
+- **CSS Animasyonları ve Geçişler:**
+    - [ ]  Tailwind CSS ile nasıl animasyon ve geçişler oluşturacağınızı öğrenin.
+    - [ ]  Hover etkileri, fade-in/fade-out gibi animasyonları nasıl tasarlayacağınızı keşfedin.
+- **State ve Focus Durumları:**
+    - [ ]  Tailwind CSS ile etkileşimli bileşenlerin nasıl tasarlanacağını öğrenin.
+    - [ ]  Hover, focus ve active durumlarına özel stil uygulamalarını öğrenin.
+- **Advanced Grid ve Layout Tasarımı:**
+    - [ ]  Grid sistemini daha karmaşık düzenlerde nasıl kullanabileceğinizi öğrenin.
+    - [ ]  Flexbox ve grid'i birleştirerek daha özelleştirilmiş layout'lar oluşturma.
+- **Kompleks Bileşen Tasarımı:**
+    - [ ]  Karmaşık bileşenleri Tailwind CSS ile nasıl tasarlayacağınızı öğrenin.
+    - [ ]  Tab menüler, akordionlar, karuseller gibi bileşenleri nasıl oluşturabileceğinizi anlayın.
+- **Optimizasyon ve Performans Artırma:**
+    - [ ]  Tailwind CSS stil kodlarını nasıl daha küçük boyutta ve hızlı yüklenebilir hale getireceğinizi öğrenin.
+    - [ ]  Critical CSS ve diğer optimizasyon tekniklerini keşfedin.
+- **Accessibilite (Erişilebilirlik) ve Tailwind CSS:**
+    - [ ]  Tailwind CSS kullanırken erişilebilirlik kurallarını nasıl uygulayacağınızı öğrenin.
+    - [ ]  Erişilebilirlik konseptlerini uygulayarak projelerinizi daha kullanıcı dostu hale getirme yöntemlerini öğrenin.
+</details>
+<details>
+  <summary>SASS</summary>
+  # Sass
+
+- **SASS Nedir ve Neden Kullanılır?**
+    - [ ]  SASS'ın CSS geliştirmeyi nasıl kolaylaştırdığını anlayın.
+    - [ ]  Nesting, Variables, Mixins gibi SASS'ın sağladığı özelliklerin avantajlarını öğrenin.
+- **SASS ve SCSS Ayrımı:**
+    - [ ]  SASS ve SCSS (Sassy CSS) arasındaki farkları anlayın.
+    - [ ]  Hangi sözdizimini tercih edeceğinizi seçin.
+- **SASS Çalışma Ortamının Hazırlanması:**
+    - [ ]  SASS'ı kurun (Node.js gerekebilir).
+    - [ ]  Projeye SASS entegrasyonu (örneğin, npm veya başka bir paket yöneticisi ile).
+- **Değişkenler ve Kullanımı:**
+    - [ ]  Değişkenleri tanımlama ve kullanma.
+    - [ ]  Renkler, genişlikler gibi yaygın değerleri değişkenlerle nasıl yöneteceğinizi öğrenin.
+- **Nesting (İç İçe Geçme):**
+    - [ ]  Stilleri daha okunabilir hale getirmek için iç içe geçme.
+    - [ ]  Sınıf seçicilerini daha hiyerarşik bir şekilde yazma.
+- **Mixin'ler ve Extend'ler:**
+    - [ ]  Mixin'lerle stil parçalarını yeniden kullanma.
+    - [ ]  Extend'lerle birden çok sınıfa aynı stil özelliklerini eklemenin avantajlarını anlayın.
+- **Operatörler ve İşlemler:**
+    - [ ]  Matematiksel işlemleri ve operatörleri kullanma.
+    - [ ]  Renkleri karıştırma veya genişlik hesaplamaları gibi örnekler.
+- **Import ve Parçalama:**
+    - [ ]  **`@import`** ile stil dosyalarını bölmek ve modülerleştirmek.
+    - [ ]  Farklı parçaları birleştirirken hangi yaklaşımı benimsemeniz gerektiğini anlayın.
+- **Kod Organizasyonu ve Modülerlik:**
+    - [ ]  Büyük projelerde kodu nasıl düzenli ve yönetilebilir hale getireceğinizi öğrenin.
+    - [ ]  Parçalama, stil dosyalarının yapısı ve modülerlik konularını kavrayın.
+- **Derleme ve Üretim:**
+    - [ ]  SASS kodlarını tarayıcı anlayabilecek CSS'e dönüştürme (derleme).
+    - [ ]  Geliştirme aşamasında ve üretimde SASS kullanmanın farklarını anlayın.
+- **Fonksiyonlar ve Mixin'ler:**
+    - [ ]  Özelleştirilmiş mixin'ler ve fonksiyonlar oluşturma.
+    - [ ]  Matematiksel hesaplamalar, renk işlemleri gibi fonksiyonları kullanma.
+- **Extend Kullanımı ve Kısıtlamaları:**
+    - [ ]  Extend ile stil paylaşımı ve stil öğelerinin tekrar kullanımı.
+    - [ ]  Extend kullanırken nelere dikkat etmeniz gerektiğini anlama.
+- **Yerel ve Global Değişkenler:**
+    - [ ]  Değişkenleri yerel veya global olarak tanımlama ve kullanma.
+- **Operatörler ve Hesaplamalar:**
+    - [ ]  Renk ve genişlik değerlerini daha karmaşık hesaplamalarla yönetme.
+    - [ ]  İleri matematiksel işlemleri SASS ile gerçekleştirme.
+- **İç İçe Geçmiş Media Sorguları:**
+    - [ ]  Media sorgularını iç içe geçirerek daha modüler ve okunabilir hale getirme.
+    - [ ]  Responsive tasarım için medya sorgularını kullanma.
+- **SASS'da Loops (Döngüler):**
+    - [ ]  Döngülerle stil tekrarlarını yönetme.
+    - [ ]  Renk paletleri, genişlik aralıkları gibi sık kullanılan yapıları döngülerle oluşturma.
+- **SASS Derleme Optimizasyonu:**
+    - [ ]  Minify ve sıkıştırma işlemleri ile çıktıyı optimize etme.
+    - [ ]  Önbellek kullanımı ve hızlı derleme ayarları.
+- **SASS ile CSS Mimari:**
+    - [ ]  OOCSS, BEM, SMACSS gibi CSS mimarilerini SASS ile nasıl uygulayacağınızı öğrenin.
+    - [ ]  Büyük projelerde nasıl düzenli ve ölçeklenebilir CSS kodları oluşturacağınızı anlayın.
+- **SASS ile Animasyon ve Keyframes Kullanımı:**
+    - [ ]  Animasyonlar ve keyframes'lerin SASS ile nasıl oluşturulacağını öğrenin.
+    - [ ]  Çeşitli efektler için SASS kullanımını keşfedin.
+- **Çeşitli SASS Araçları ve Kütüphaneleri:**
+    - [ ]  SASS ile çalışırken işinizi kolaylaştıracak kütüphaneler ve araçlar.
+    - [ ]  Autoprefixer, Susy gibi popüler SASS yardımcıları hakkında bilgi edinin.
+</details>
+<details>
+  <summary>LESS</summary>
+  # Less
+
+- **LESS Sözdizimi ve Temel Kavramlar:**
+    - LESS sözdizimini anlama ve temel yapıları öğrenme.
+    - Değişkenler, nesting, mixin'ler gibi temel kavramlar.
+- **Değişkenler ve Kullanımı:**
+    - Değişkenleri tanımlama ve kullanma.
+    - Renkler, genişlikler gibi değerleri değişkenlerle yönetme.
+- **Nesting (İç İçe Geçme) ve Avantajları:**
+    - Stilleri daha hiyerarşik ve okunabilir bir şekilde yazma.
+    - İç içe geçme kullanarak stil düzeni oluşturma.
+- **Mixin'lerin Oluşturulması ve Kullanımı:**
+    - Mixin'lerin nasıl oluşturulduğunu ve kullanıldığını öğrenme.
+    - Mixin parametreleri ile daha esnek ve yeniden kullanılabilir kodlar oluşturma.
+- **Extend ve Inheritance (Kalıtım) Kullanımı:**
+    - Extend kullanarak stil paylaşımının nasıl yapıldığını öğrenme.
+    - Kalıtım ile stillerin yeniden kullanımını anlama.
+- **Operatörler ve İşlemler:**
+    - Matematiksel işlemleri ve operatörleri kullanma.
+    - Değişkenlerde hesaplamalar yapma.
+- **LESS Derleme ve Kompilasyon:**
+    - LESS kodlarını CSS'e dönüştürme (derleme).
+    - LESS'i tarayıcı tarafından anlaşılabilir CSS'e çevirme işlemi.
+- **LESS Dosya Yapısı ve Modülerlik:**
+    - Projede stil dosyalarını nasıl düzenleyeceğinizi ve organize edeceğinizi öğrenme.
+    - Modüler bir yaklaşım benimseyerek kodun yönetimini geliştirme.
+- **LESS ile Responsive Tasarım:**
+    - Media sorgularını LESS ile nasıl kullanacağınızı öğrenme.
+    - Farklı ekran boyutları için stil kodlarını nasıl ayarlayacağınızı öğrenme.
+- **LESS Araçları ve İlerleme:**
+    - LESS geliştirmenizi destekleyecek araçları ve yardımcı kütüphaneleri öğrenme.
+    - Daha fazla pratik yaparak becerilerinizi geliştirme.
+    
+- **Mixin ve Parametrelerde İleri Kullanım:**
+    - Dinamik mixin'ler oluşturma ve kullanma.
+    - Mixin parametrelerini daha karmaşık senaryolarda kullanma.
+- **LESS Fonksiyonları ve Kullanımı:**
+    - LESS'in yerleşik fonksiyonlarını kullanma (örneğin, **`lighten`**, **`darken`**, **`percentage`**).
+    - Kendi özel fonksiyonlarınızı oluşturma.
+- **LESS ve OOP (Object-Oriented Programming):**
+    - Stil kodlarını nesne odaklı bir yaklaşımla nasıl düzenleyebileceğinizi öğrenin.
+    - LESS ile sınıf, nesne ve kalıtım konseptlerini kullanma.
+- **Dinamik Stil Yönetimi:**
+    - JavaScript ile etkileşim içinde olan dinamik stiller oluşturma.
+    - Dinamik renk değişiklikleri, animasyonlar gibi örnekleri ele alma.
+- **LESS ve CSS Grid Sistemleri:**
+    - LESS ile CSS grid sistemleri oluşturma.
+    - Grid yapılarını dinamik hale getirme ve farklı düzenlere uyarlamak.
+- **LESS ile CSS Preloaders ve Animasyonlar:**
+    - CSS ön yükleyiciler (preloaders) ve animasyonlar oluşturma.
+    - İleri seviyede animasyon tekniklerini LESS ile uygulama.
+- **LESS Modülerliği Geliştirme:**
+    - Büyük projelerde kod modülerliğini nasıl optimize edeceğinizi öğrenme.
+    - Mixin'ler, extend'ler ve diğer tekniklerle daha sağlam bir modüler yapı kurma.
+- **Performans ve Derleme Optimizasyonu:**
+    - Derleme sürelerini ve çıktı boyutlarını nasıl optimize edeceğinizi öğrenme.
+    - LESS stil kodlarını hızlandırma ve daha iyi performans elde etme.
+- **LESS Projelerinde Best Practices:**
+    - LESS projelerinde en iyi uygulama yönergelerini ve kod kalitesi standartlarını öğrenme.
+    - Stil dosyası organizasyonu, naming conventions, stil dosyası yapısı gibi konulara odaklanma.
+- **LESS Entegrasyonu ve Süreklilik Akışı:**
+    - LESS stil kodlarını süreklilik akışına entegre etme.
+    - Derleme, test ve dağıtım süreçlerini optimize etme.
+</details>
+<details>
+  <summary>Stylus</summary>
+  # Stylus
+
+- **Stylus Giriş ve Temel Kavramlar:**
+    - Stylus'un CSS kodları daha kolay ve modüler hale getirmek için nasıl kullanıldığını öğrenin.
+    - Değişkenler, mixin'ler, extend'ler gibi temel kavramları anlayın.
+- **Değişkenler ve Kullanımı:**
+    - Değişkenleri tanımlama ve kullanma.
+    - Renkler, genişlikler gibi değerleri değişkenlerle yönetme.
+- **Nesting (İç İçe Geçme) ve Hiyerarşik Yazım:**
+    - Stilleri iç içe geçirerek daha düzenli ve okunabilir hale getirme.
+    - Hiyerarşik yazımın avantajlarını öğrenme.
+- **Mixin'lerin Kullanımı ve Parametreleri:**
+    - Mixin'lerin nasıl oluşturulduğunu ve kullanıldığını anlayın.
+    - Mixin parametreleri ile stil öğelerini esnek bir şekilde özelleştirme.
+- **Extend Kullanımı ve Paylaşılan Stiller:**
+    - Extend ile stil kodlarını paylaşma ve tekrar kullanma.
+    - Extend kullanarak nasıl stil kalıtımı sağlayacağınızı öğrenin.
+- **Stylus Mixin'leri ve Fonksiyonları:**
+    - Mixin'lerin ve fonksiyonların daha karmaşık senaryolarda nasıl kullanılacağını öğrenin.
+    - Dinamik stil oluşturma ve parametreli mixin'lerin gücünü keşfedin.
+- **Stylus'da Modülerlik ve OOP (Nesne Odaklı Programlama):**
+    - Stil kodlarını nesne odaklı bir yaklaşımla nasıl düzenleyeceğinizi öğrenin.
+    - Kalıtım, sınıflar ve modüllerle daha düzenli bir stil yapı oluşturma.
+- **Dinamik Stil Yönetimi ve Javascript Entegrasyonu:**
+    - Stylus'u JavaScript ile entegre ederek dinamik stiller oluşturmayı öğrenin.
+    - Stil kodlarını dinamik verilere dayalı olarak nasıl yöneteceğinizi öğrenin.
+- **Stylus ile Responsive Tasarım:**
+    - Media sorgularını nasıl kullanacağınızı ve responsive tasarımı nasıl uygulayacağınızı öğrenin.
+    - Farklı cihazlara yönelik stil ayarlamalarını ele alın.
+- **Stylus Performans ve Optimizasyon:**
+    - Stil kodlarını daha hızlı derlemek ve daha optimize bir çıktı üretmek için teknikler öğrenin.
+    - Derleme sürelerini iyileştirme ve performansı artırma yöntemleri.
+- **Stylus Projelerinde Best Practices:**
+    - Projelerde en iyi uygulama yönergelerini ve stil kodları kalite standartlarını öğrenin.
+    - Kod organizasyonu, naming conventions, stil dosyası yapısı gibi konulara derinlemesine odaklanın.
+- **Stylus ve Gelişmiş CSS Mimari:**
+    - Farklı CSS mimarilerini (OOCSS, BEM, SMACSS) Stylus ile nasıl uygulayacağınızı öğrenin.
+    - Büyük projelerde daha düzenli ve ölçeklenebilir stil kodları oluşturma yöntemleri.
+- **Stylus Araçları ve Gelişmiş Kütüphaneler:**
+    - Stylus geliştirme sürecinizi destekleyecek yardımcı araçları ve kütüphaneleri keşfedin.
+    - Autoprefixer, stylus nib gibi popüler yardımcı kütüphaneleri öğrenin.
+</details>
+<details>
+  <summary>Bootstrap</summary>
+  # Bootstrap
+
+Bootstrap, web geliştiricilerin hızlı ve duyarlı web siteleri ve uygulamaları oluşturmak için kullanabilecekleri popüler bir açık kaynak CSS çerçevesidir.
+
+**Başlangıç Düzeyi Bootstrap Çalışma Başlıkları:**
+
+1. **Bootstrap Temel Kavramlar:**
+    - Bootstrap nedir ve nasıl çalışır?
+    - Grid sistemleri, bileşenler ve stiller gibi temel kavramları öğrenin.
+2. **Bootstrap Kurulumu:**
+    - Bootstrap'ı projenize eklemek için CDN'leri veya npm/yarn gibi paket yöneticilerini kullanmayı öğrenin.
+3. **Grid Sistemi:**
+    - Bootstrap grid sistemi ile sayfa düzenlerini oluşturmayı ve duyarlı tasarım yapmayı öğrenin.
+4. **Bootstrap Bileşenleri:**
+    - Bootstrap bileşenlerini kullanarak düğmeler, form elemanları, navigasyon menüleri, modallar, kartlar ve diğer UI bileşenlerini nasıl oluşturacağınızı öğrenin.
+5. **Özel Stiller ve Temalar:**
+    - Bootstrap ile özel stil ve tema oluşturmayı öğrenin.
+    - Less veya Sass kullanarak temaları özelleştirme yeteneklerini inceleyin.
+
+**İleri Düzey Bootstrap Çalışma Başlıkları:**
+
+1. **Bootstrap Sass/Less Kullanımı:**
+    - Bootstrap'un Sass veya Less sürümlerini projenizde nasıl kullanacağınızı öğrenin.
+    - Özel derleme ve yapılandırmaları ele alın.
+2. **Özel Bileşenlerin Oluşturulması:**
+    - Bootstrap bileşenlerini özelleştirip kendi özel bileşenlerinizi nasıl oluşturacağınızı öğrenin.
+    - Özelleştirilmiş bileşenlerinizi projelerinizde kullanın.
+3. **Bootstrap JavaScript:**
+    - Bootstrap tarafından sunulan JavaScript bileşenlerini (örneğin, modal, dropdown) nasıl kullanacağınızı öğrenin.
+    - Özel etkinlik dinleyicileri eklemek ve özelleştirmek için JavaScript'i kullanmayı inceleyin.
+4. **Bootstrap Entegrasyonu:**
+    - Bootstrap'ı farklı JavaScript çerçeveleri ve kütüphaneleriyle (örneğin, React, Angular, Vue.js) nasıl entegre edeceğinizi öğrenin.
+5. **Bootstrap ve Mobil Uygulama Geliştirme:**
+    - Bootstrap'u mobil uygulama geliştirme projelerinde nasıl kullanabileceğinizi öğrenin.
+    - Duyarlı tasarımı ve mobil kullanılabilirliği iyileştirmek için en iyi uygulamaları keşfedin.
+6. **Performans İyileştirmeleri:**
+    - Bootstrap projelerinizin performansını artırmak için CDN optimizasyonları ve dosya sıkıştırma tekniklerini inceleyin.
+7. **Bootstrap Eklentileri ve Temaları:**
+    - Bootstrap için üçüncü taraf eklentileri ve özel temaları nasıl kullanacağınızı ve entegre edeceğinizi öğrenin.
+8. **Test ve Hata Ayıklama:**
+    - Bootstrap projelerinizi test etmek ve hata ayıklamak için tarayıcı geliştirici araçlarını ve test otomasyon araçlarını nasıl kullanacağınızı öğrenin.
+</details>
+
 
 <details>
   <summary>Click to expand</summary>
