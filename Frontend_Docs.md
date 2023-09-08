@@ -1,6 +1,434 @@
 # ****Aldığım notları yazdığım, yeni öğrendiklerimi geçirdiğim ve ihtiyacım olursa dönüp bakacağım yer.****
 
 <details>
+  <summary>Gulp.js</summary>
+# Gulp.js
+
+- **Gulp Nedir ve Neden Kullanılır?**
+    - [ ]  Tamam
+    
+    Gulp, bir JavaScript görev yöneticisi ve otomasyon aracıdır. Front-end geliştirme sürecinde tekrarlayıcı ve zaman alıcı görevleri otomatikleştirmek için kullanılır. Özellikle dosyaları işleme, dönüştürme, birleştirme, sıkıştırma ve geliştirme sunucusu gibi işlemleri hızlı ve verimli bir şekilde gerçekleştirmek için tercih edilir.
+    
+    **Örnek:**
+    Varsayalım ki bir web projesi üzerinde çalışıyorsunuz ve proje dosyalarınızda Sass kullanıyorsunuz. Ancak her değişiklik yaptığınızda Sass dosyalarınızı CSS dosyalarına dönüştürmek ve ardından CSS dosyalarınızı minify etmek için her seferinde terminalde komutları elle çalıştırmanız gerekiyor. Bu oldukça zaman alıcı ve tekrarlayıcı bir işlem olabilir.
+    
+    İşte burada Gulp devreye girer. Gulp kullanarak, projenizin Gulpfile.js adlı yapılandırma dosyasında Sass dosyalarını CSS dosyalarına otomatik olarak dönüştürmeyi ve CSS dosyalarınızı minify etmeyi ayarlayabilirsiniz. Bu sayede her değişiklik yaptığınızda, Gulp otomatik olarak belirttiğiniz işlemleri yapar ve siz sadece kodunuzu yazmaya odaklanırsınız.
+    
+    Bu örnek, Gulp'un zaman kazandıran ve işleri otomatikleştiren özelliklerinden birini gösterir. Proje geliştirme sürecini daha verimli ve düzenli hale getirmek için Gulp'u kullanabilirsiniz.
+    
+- **Gulp Görevleri ve Pipe Kavramı**
+    - [ ]  Tamam
+    
+    Gulp'u kullanmaya başlamak için öncelikle Node.js ve npm (Node Package Manager) kurulu olmalıdır. Daha sonra projenizde Gulp'u yüklemek ve Gulpfile.js adında bir yapılandırma dosyası oluşturmak gerekmektedir.
+    
+    ### **Örnek:**
+    
+    Node.js ve npm'yi bilgisayarınıza yüklediğinizden emin olduktan sonra, terminalde aşağıdaki komutla Gulp'u yükleyebilirsiniz:
+    
+    ### # Gulp'u global olarak yükleyin (eğer daha önce yüklemediyseniz)
+    
+    ```bash
+    npm install -g gulp-cli
+    ```
+    
+    ### # Projenizin klasöründe Gulp'u yükleyin
+    
+    ```bash
+    npm install gulp --save-dev
+    ```
+    
+    Bu komutlarla Gulp'u projenize ekledikten sonra, projenizin kök dizininde Gulpfile.js adında bir dosya oluşturmalısınız. Bu dosya, Gulp görevlerini tanımlayacağınız yapılandırma dosyasıdır.
+    
+    ```jsx
+    // Gulpfile.js
+    // Gulp modülünü yüklüyoruz
+    const gulp = require('gulp');
+    // Örnek bir Gulp görevi tanımlayalım
+    gulp.task('message', function() {
+    return console.log('Merhaba, Gulp!');
+    });
+    ```
+    
+    Yukarıdaki örnekte, Gulpfile.js dosyasında "message" adında bir Gulp görevi tanımlıyoruz. Bu görev, terminalde gulp message komutuyla çalıştırılabilir ve "Merhaba, Gulp!" mesajını verecektir.
+    
+    Özetle, Gulp'u projenize eklemek ve temel bir Gulp görevi tanımlamak için bu adımları takip etmeniz gerekmektedir. Gulpfile.js dosyası içinde tanımlayacağınız görevler sayesinde projenizdeki dosyaları işleyebilir, dönüştürebilir ve daha birçok otomasyon işlemini gerçekleştirebilirsiniz.
+    
+- **Dosyaları İşleme ve Dönüştürme (Minify, Concatenate, Uglify, vs.)**
+    - [ ]  Tamam
+    
+    ### Dosyaları İşleme ve Dönüştürme (Minify, Concatenate, Uglify, vs.)
+    
+    Gulp, dosyaları işlemek ve dönüştürmek için çeşitli eklentileri destekler. Örneğin, CSS ve JavaScript dosyalarını minify (sıkıştırma), birleştirme, kodu optimize etme (uglify) gibi işlemler yapabilirsiniz.
+    
+    ### Örnek 1: CSS Minify ve Birleştirme
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    const concat = require('gulp-concat');
+    
+    gulp.task('styles', function() {
+    	return gulp.src('src/**/*.scss')
+    	.pipe(sass())
+    	.pipe(cssnano()) // CSS dosyalarını minify
+    	.pipe(concat('all.min.css')) // Birleştirilmiş CSS dosyası
+    	.pipe(gulp.dest('dist/css'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "styles" adında bir Gulp görevi tanımladık. Bu görev, "src" klasöründeki tüm .scss dosyalarını alır, Sass dönüşümü yapar, CSS dosyalarını minify eder ve birleştirir. Minify edilmiş ve birleştirilmiş CSS dosyasını "dist/css" klasörüne kaydeder.
+    
+    ### Örnek 2: JavaScript Uglify ve Birleştirme
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const uglify = require('gulp-uglify');
+    const concat = require('gulp-concat');
+    
+    gulp.task('scripts', function() {
+    	 return gulp.src('src/js/**/*.js')
+    	.pipe(uglify()) // JavaScript dosyalarını sıkıştır (uglify)
+    	.pipe(concat('all.min.js')) // Birleştirilmiş JS dosyası
+    	.pipe(gulp.dest('dist/js'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "scripts" adında bir Gulp görevi tanımladık. Bu görev, "src/js" klasöründeki tüm .js dosyalarını alır, JavaScript kodunu sıkıştırır (uglify) ve birleştirir. Sıkıştırılmış ve birleştirilmiş JavaScript dosyasını "dist/js" klasörüne kaydeder.
+    
+    Bu örnekler, Gulp'un dosyaları işleme ve dönüştürme yeteneklerini göstermektedir. Gulp ile CSS ve JavaScript dosyalarını sıkıştırma, birleştirme ve optimize etme gibi işlemleri otomatikleştirerek projenizin performansını artırabilir ve dosyalarınızın boyutunu azaltabilirsiniz.
+    
+- **Gulp ile Sass ve CSS İşlemleri**
+    - [ ]  Tamam
+    
+    ### Gulp ile Sass ve CSS İşlemleri
+    
+    Gulp, Sass dosyalarını CSS dosyalarına dönüştürmek ve CSS dosyalarını işlemek için çeşitli eklentileri destekler. Bu sayede CSS stil dosyalarınızı geliştirme sürecinde kolayca düzenleyebilir ve sonunda dönüştürerek projenizde kullanabilirsiniz.
+    
+    ### Örnek: Sass Dönüşümü ve CSS Minify
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    
+    gulp.task('styles', function() {
+    	return gulp.src('src/**/*.scss')
+    	.pipe(sass()) // Sass dosyalarını CSS'e dönüştürür
+    	.pipe(cssnano()) // CSS dosyalarını minify eder
+    	.pipe(gulp.dest('dist/css'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "styles" adında bir Gulp görevi tanımladık. Bu görev, "src" klasöründeki tüm .scss dosyalarını alır, Sass dönüşümü yapar ve sonrasında CSS dosyalarını minify eder. Dönüştürülen ve minify edilen CSS dosyalarını "dist/css" klasörüne kaydeder.
+    
+    Gulp ile Sass ve CSS işlemlerini bir araya getirerek stil dosyalarınızı dönüştürüp optimize edebilirsiniz. Bu sayede CSS yazım sürecinizi daha kolay ve verimli hale getirebilir, proje boyutunu küçülterek performansı artırabilirsiniz.
+    
+- **Gulp ile JavaScript İşlemleri**
+    - [ ]  Tamam
+    
+    ### Gulp ile JavaScript İşlemleri
+    
+    Gulp, JavaScript dosyalarını birleştirme, sıkıştırma (uglify), kod kalitesini kontrol etme (linting) gibi işlemleri kolayca yapmak için çeşitli eklentileri destekler. Bu sayede JavaScript dosyalarınızı daha verimli ve optimize edilmiş hale getirebilirsiniz.
+    
+    ### Örnek: JavaScript Uglify ve Birleştirme
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const uglify = require('gulp-uglify');
+    const concat = require('gulp-concat');
+    
+    gulp.task('scripts', function() {
+    	 return gulp.src('src/js/**/*.js')
+    	.pipe(uglify()) // JavaScript dosyalarını sıkıştırır (uglify)
+    	.pipe(concat('all.min.js')) // Birleştirilmiş JS dosyası
+    	.pipe(gulp.dest('dist/js'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "scripts" adında bir Gulp görevi tanımladık. Bu görev, "src/js" klasöründeki tüm .js dosyalarını alır, JavaScript kodunu sıkıştırır (uglify) ve birleştirir. Sıkıştırılmış ve birleştirilmiş JavaScript dosyasını "dist/js" klasörüne kaydeder.
+    
+    Gulp ile JavaScript işlemlerini kullanarak projenizdeki JavaScript dosyalarını optimize edebilir ve performansı artırabilirsiniz. Ayrıca, kod kalitesini kontrol etmek için linting araçlarını entegre ederek hataları erken aşamada tespit edebilir ve daha sağlam bir kod tabanı oluşturabilirsiniz.
+    
+- **Otomatik Yenileme (Live Reloading) ve Geliştirme Sunucusu**
+    - [ ]  Tamam
+    
+    ### Otomatik Yenileme (Live Reloading) ve Geliştirme Sunucusu
+    
+    Gulp, tarayıcıda otomatik yenileme (live reloading) yapmak ve geliştirme sunucusu oluşturmak için çeşitli eklentileri destekler. Bu sayede projenizde yapılan değişiklikleri hızlıca görebilir ve geliştirme sürecini daha verimli hale getirebilirsiniz.
+    
+    ### Örnek: Tarayıcıda Otomatik Yenileme
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const browserSync = require('browser-sync').create();
+    
+    gulp.task('serve', function() {
+    	browserSync.init({
+    	server: './dist' // Geliştirme sunucusunu "dist" klasöründen başlat
+    });
+    
+    // "dist" klasöründeki dosyalarda değişiklikleri takip eder ve tarayıcıda otomatik yenileme yapar
+    gulp.watch('dist/**/*').on('change', browserSync.reload);
+    });
+    ```
+    
+    Yukarıdaki örnekte, "server" adında bir Gulp görevi tanımladık. Bu görev, "dist" klasöründeki dosyaları geliştirme sunucusu olarak başlatır ve tarayıcıda otomatik yenileme yapar. Gulp'un gulp.watch() yöntemi, "dist" klasöründeki dosyalardaki değişiklikleri izler ve herhangi bir değişiklik olduğunda tarayıcıyı otomatik olarak yeniler.
+    
+    Bu sayede, projenizde yapılan değişiklikleri takip edebilir ve anında tarayıcıda görüntüleyebilirsiniz. Geliştirme sürecini daha verimli hale getirir ve anlık geri bildirim almanızı sağlar.
+    
+    Gulp ile otomatik yenileme ve geliştirme sunucusu kullanarak, projenizi hızlı bir şekilde geliştirebilir ve önizleme yapabilirsiniz. Değişiklikleri hemen tarayıcıda görme imkanı, hataları hızlıca tespit etme ve düzeltme sürecini kolaylaştırır.
+    
+- **Gulp ile Resim Optimizasyonu**
+    - [ ]  Tamam
+    
+    ### Gulp ile Resim Optimizasyonu
+    
+    Gulp, projenizdeki resim dosyalarını optimize etmek için çeşitli eklentileri destekler. Bu sayede resimlerin boyutunu küçülterek sayfa yüklemesini hızlandırabilir ve internet trafiğini azaltabilirsiniz.
+    
+    ### Örnek: Resim Optimizasyonu
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const imagemin = require('gulp-imagemin');
+    
+    gulp.task('images', function() {
+    	 return gulp.src('src/images/**/*')
+    	.pipe(imagemin()) // Resim dosyalarını optimize eder
+    	.pipe(gulp.dest('dist/images'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "images" adında bir Gulp görevi tanımladık. Bu görev, "src/images" klasöründeki tüm resim dosyalarını alır ve resimleri optimize eder. Optimizasyon işlemi sonucunda elde edilen resimleri "dist/images" klasörüne kaydeder.
+    
+    Gulp ile resim optimizasyonu, web sitenizin hızını artırır ve kullanıcı deneyimini iyileştirir. Optimize edilmiş resimler, daha hızlı yükleme süreleri ve daha düşük veri tüketimi sağlar.
+    
+    Eğer başka bir Gulp konusu veya bir sonraki başlık tercihiniz varsa lütfen belirtin, size yardımcı olmaktan mutluluk duyarım.
+    
+- **Proje Yapılandırması ve Organizasyonu**
+    - [ ]  Tamam
+    
+    ### Proje Yapılandırması ve Organizasyonu
+    
+    Gulp, projenizi daha iyi yapılandırmak ve dosyalarınızı daha düzenli tutmak için çeşitli eklentiler ve yöntemler sunar. Bu sayede, dosyalarınızın düzenini koruyabilir, işlemleri daha etkili bir şekilde yönetebilir ve projenizin bakımını kolaylaştırabilirsiniz.
+    
+    ### Örnek: Proje Yapılandırması ve Organizasyonu
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    const uglify = require('gulp-uglify');
+    const imagemin = require('gulp-imagemin');
+    
+    // Projenizin klasör yapısına uygun bir şekilde dosya yollarını tanımlayabilirsiniz
+    const paths = {
+    	styles: {
+    	src: 'src/styles/**/*.scss',
+    	dest: 'dist/css'
+    	},
+    	scripts: {
+    	src: 'src/js/**/*.js',
+    	dest: 'dist/js'
+    	},
+    	images: {
+    	src: 'src/images/**/*',
+    	dest: 'dist/images'
+    	}
+    };
+    
+    // Stil dosyalarını işleme görevi
+    gulp.task('styles', function() {
+    	 return gulp.src(paths.styles.src)
+    	.pipe(sass())
+    	.pipe(cssnano())
+    	.pipe(gulp.dest(paths.styles.dest));
+    });
+    
+    // JavaScript dosyalarını işleme görevi
+    gulp.task('scripts', function() {
+    	 return gulp.src(paths.scripts.src)
+    	.pipe(uglify())
+    	.pipe(gulp.dest(paths.scripts.dest));
+    });
+    
+    // Resim dosyalarını optimize etme görevi
+    gulp.task('images', function() {
+    	 return gulp.src(paths.images.src)
+    	.pipe(imagemin())
+    	.pipe(gulp.dest(paths.images.dest));
+    });
+    
+    // Tüm görevleri bir araya getirerek birleşik bir "build" görevi oluşturabilirsiniz
+    gulp.task('build', gulp.parallel('styles', 'scripts', 'images'));
+    
+    // Geliştirme sırasında "watch" görevi ile dosyaları izleyebilirsiniz
+    gulp.task('watch', function() {
+    	gulp.watch(paths.styles.src, gulp.series('styles'));
+    	gulp.watch(paths.scripts.src, gulp.series('scripts'));
+    	gulp.watch(paths.images.src, gulp.series('images'));
+    });
+    ```
+    
+    Yukarıdaki örnekte, "paths" adında bir yapı oluşturduk ve stil, script ve resim dosyalarını tutmak için klasör yapılarını belirttik. Daha sonra bu yapıyı kullanarak "styles", "scripts" ve "images" adında üç ayrı Gulp görevi tanımladık. Her görev, belirtilen dosya yollarını kullanarak işlemleri gerçekleştirir.
+    
+    Ayrıca, "build" adında birleşik bir görev oluşturduk. Bu görev, gulp.parallel() ile tanımlanan diğer üç görevi aynı anda çalıştırır, böylece stil, script ve resim dosyalarınızı birleşik bir şekilde işleyebilirsiniz.
+    
+    Son olarak, "watch" adında bir görev oluşturduk. Bu görev, belirtilen dosya yollarındaki değişiklikleri izler ve ilgili görevleri otomatik olarak çalıştırır. Bu sayede, geliştirme sürecinde dosyalarınızdaki değişiklikleri takip edebilir ve anında işlenmiş sonuçları görebilirsiniz.
+    
+    Proje yapılandırması ve organizasyonu, projenizin karmaşıklığı arttıkça önemli hale gelir. Gulp ile yapılandırma ve organizasyon yöntemlerini kullanarak projenizi daha düzenli tutabilir ve iş akışınızı optimize edebilirsiniz.
+    
+- **Gulp ve Paket Yöneticileri ile Çalışma**
+    - [ ]  Tamam
+    
+    Gulp, çeşitli eklentiler ve paket yöneticileri ile birlikte çalışabilir. Paket yöneticileri, Gulp ile kullanabileceğiniz hazır eklentilerin yönetimini sağlar. Bu şekilde projenizde ihtiyacınız olan eklentileri kolayca ekleyebilir ve güncelleyebilirsiniz.
+    
+    Gulp ile sık kullanılan paket yöneticilerinden iki tanesi npm (Node Package Manager) ve Yarn'dır.
+    
+    ### Örnek: Eklenti Kurulumu ve Çalıştırma
+    
+    ### # Eklenti kurulumu için npm
+    
+    ```bash
+    npm install gulp-sass --save-dev
+    ```
+    
+    ### # Eklenti kurulumu için Yarn
+    
+    ```bash
+    yarn add gulp-sass --dev
+    ```
+    
+    Yukarıdaki örnek, Gulp için "gulp-sass" eklentisinin kurulumunu göstermektedir. Eklentileri projenize ekledikten sonra, Gulpfile.js dosyanızda bu eklentiyi kullanabilirsiniz.
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    
+    gulp.task('styles', function() {
+    	 return gulp.src('src/styles/**/*.scss')
+    	.pipe(sass())
+    	.pipe(gulp.dest('dist/css'));
+    });
+    ```
+    
+    Gulpfile.js dosyanızda eklentileri yüklemek ve kullanmak için "require()" fonksiyonunu kullanarak ilgili eklentileri içe aktarabilirsiniz.
+    
+    Paket yöneticileri, projenizdeki bağımlılıkları yönetmek ve eklentileri hızlı bir şekilde eklemek için güçlü araçlardır. Gulp ile birlikte npm veya Yarn kullanarak ihtiyacınız olan eklentileri projenize ekleyebilir ve projenizi daha etkili bir şekilde geliştirebilirsiniz
+    
+- **Gulp ile Çoklu Ortam (Environment) Desteği**
+    - [ ]  Tamam
+    
+    Projeler genellikle farklı ortamlarda (development, staging, production vb.) farklı ayarlarla çalıştırılır. Gulp, bu tür senaryolara uygun bir şekilde çoklu ortam desteği sağlar. Böylece, farklı ortamlarda farklı işlemler yapabilir veya yapılandırmaları değiştirebilirsiniz.
+    
+    **Örnek: Çoklu Ortam Desteği**
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    const uglify = require('gulp-uglify');
+    const imagemin = require('gulp-imagemin');
+    
+    // Ortama göre farklı yapılandırmalar
+    const isProduction = process.env.NODE_ENV === 'production';
+    // Stil dosyalarını işleme görevi
+    gulp.task('styles', function() {
+    	 return gulp.src('src/styles/**/*.scss')
+    	.pipe(sass())
+    	.pipe(isProduction ? cssnano() : gulp.dest('dist/css'));
+    });
+    
+    // JavaScript dosyalarını işleme görevi
+    gulp.task('scripts', function() {
+    	 return gulp.src('src/js/**/*.js')
+    	.pipe(isProduction ? uglify() : gulp.dest('dist/js'));
+    });
+    
+    // Resim dosyalarını optimize etme görevi
+    gulp.task('images', function() {
+    	 return gulp.src('src/images/**/*')
+    	.pipe(isProduction ? imagemin() : gulp.dest('dist/images'));
+    });
+    
+    // Tüm görevleri birleşik bir "build" görevi oluşturabiliriz
+    gulp.task('build', gulp.parallel('styles', 'scripts', 'images'));
+    ```
+    
+    Yukarıdaki örnekte, "isProduction" adında bir değişken oluşturduk ve bu değişkeni ortama bağlı olarak atadık. Daha sonra stil, script ve resim dosyalarının işlenmesi sırasında, bu değişkeni kullanarak işlemleri belirli ortamlara göre yapmamızı sağladık.
+    
+    Örneğin, "isProduction" değişkeni true olduğunda, Gulp, stil dosyalarını ve JavaScript dosyalarını sıkıştırmak (minify) ve resimleri optimize etmek için ilgili eklentileri kullanır. Ancak "isProduction" değişkeni false olduğunda, Gulp, stil ve JavaScript dosyalarını optimize etmeden (minify etmeden) "dist" klasörüne kopyalar.
+    
+    Bu şekilde, farklı ortamlarda farklı yapılandırmalar yapabilir ve projenizin geliştirme, üretim ve diğer ortamlarda verimli bir şekilde çalışmasını sağlayabilirsiniz.
+    
+- **Gulp ile Paralel ve Sıralı Görevlerin Yürütülmesi**
+    - [ ]  Tamam
+    
+    ### Gulp ile Paralel ve Sıralı Görevlerin Yürütülmesi
+    
+    Gulp, çeşitli görevleri paralel veya sıralı olarak yürütme yeteneğine sahiptir. Bu, projenizin ihtiyaçlarına göre iş akışını optimize etmenize yardımcı olur.
+    
+    ### Örnek: Paralel ve Sıralı Görevlerin Yürütülmesi
+    
+    ```jsx
+    // Gulpfile.js
+    const gulp = require('gulp');
+    const sass = require('gulp-sass');
+    const cssnano = require('gulp-cssnano');
+    const uglify = require('gulp-uglify');
+    const imagemin = require('gulp-imagemin');
+    
+    // Stil dosyalarını işleme görevi
+    	gulp.task('styles', function() {
+    	 return gulp.src('src/styles/**/*.scss')
+    	.pipe(sass())
+    	.pipe(cssnano())
+    	.pipe(gulp.dest('dist/css'));
+    });
+    
+    // JavaScript dosyalarını işleme görevi
+    gulp.task('scripts', function() {
+    	 return gulp.src('src/js/**/*.js')
+    	.pipe(uglify())
+    	.pipe(gulp.dest('dist/js'));
+    });
+    
+    // Resim dosyalarını optimize etme görevi
+    gulp.task('images', function() {
+    	 return gulp.src('src/images/**/*')
+    	.pipe(imagemin())
+    	.pipe(gulp.dest('dist/images'));
+    });
+    
+    // Paralel olarak çalışacak görevleri "build" görevine ekleyebiliriz
+    gulp.task('build', gulp.parallel('styles', 'scripts', 'images'));
+    
+    // Sıralı olarak çalışacak görevleri "default" görevine ekleyebiliriz
+    gulp.task('default', gulp.series('styles', 'scripts', 'images'));
+    ```
+    
+    Yukarıdaki örnekte, gulp.parallel() ve gulp.series() yöntemlerini kullanarak görevleri paralel ve sıralı olarak yürütebiliriz.
+    
+    gulp.parallel() metodu, içine aldığı görevleri aynı anda başlatır ve paralel olarak çalışmasını sağlar. Bu sayede stil, script ve resim dosyaları aynı anda işlenir ve işlem süresi kısalır. "build" görevi örneğinde, stil, script ve resim dosyaları paralel olarak işlenir.
+    
+    gulp.series() metodu ise içine aldığı görevleri sırasıyla çalıştırır. Bir görevin tamamlanmasını bekler ve ardından diğer görevi başlatır. "default" görevi örneğinde, stil dosyaları işlenir, ardından script dosyaları işlenir ve en son resim dosyaları işlenir.
+    
+    Bu şekilde, projenizin gereksinimlerine uygun olarak görevleri paralel veya sıralı olarak düzenleyebilir ve projenizin iş akışını optimize edebilirsiniz.
+
+</details>
+
+
+
+<details>
   <summary>Click to expand</summary>
   ## Değişken (Variable):
 Değerlerin depolanması için kullanılan yapıdır. JavaScript'te değişkenler var, let ve const anahtar kelimeleri ile tanımlanabilir.
