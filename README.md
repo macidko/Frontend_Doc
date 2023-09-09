@@ -2139,63 +2139,794 @@ Grunt JavaScript task runner'ı hakkında başlangıç ve ileri seviye konuları
   # ESLint
 
 - **ESLint Nedir ve Nasıl Kurulur?**
-    - ESLint'in amacı ve önemi
-    - Proje kökünde ESLint kurulumu
-    - Yerel ve global kurulum
+    
+    **ESLint'in Amacı ve Önemi:**
+    
+    ESLint, JavaScript kodunun belirli bir stil ve kalite standartlarına uygun olup olmadığını kontrol etmek için kullanılan açık kaynaklı bir statik kod analiz aracıdır. ESLint, kodunuzu daha okunabilir ve hatasız hale getirmenize yardımcı olur. İşte ESLint'in önemli noktaları:
+    
+    - **Kod Kalitesi:** ESLint, kodunuzu belirli kurallara ve standartlara göre denetler, böylece kod kalitesini artırır.
+    - **Hataları Önleme:** Potansiyel hataları tespit ederek kodun daha sağlam ve güvenilir olmasını sağlar.
+    - **Okunabilirlik:** Stil rehberlerine uygun kod yazmanıza yardımcı olur, bu da kodun daha kolay okunabilir olmasını sağlar.
+    - **Ekibinizle Uyum:** Proje ekibinizle birlikte çalışırken, herkesin aynı kod stiline ve kalite standartlarına uymasını sağlar.
+    
+    **Proje Kökünde ESLint Kurulumu:**
+    
+    Proje kökünde ESLint kurmak için aşağıdaki adımları izleyebilirsiniz:
+    
+    1. **Node.js ve npm Kurulumu:** Öncelikle bilgisayarınızda Node.js ve npm (Node Package Manager) kurulu olmalıdır. Node.js ve npm'i resmi web sitesinden indirebilir ve kurabilirsiniz.
+    2. **Proje Kökünde npm İle ESLint Kurulumu:**
+        
+        Proje kök klasörünüzde terminal veya komut istemcisini açın ve aşağıdaki komutu çalıştırın:
+        
+        ```bash
+        npm install eslint --save-dev
+        ```
+        
+        Bu komut, proje bağımlılıklarınıza ESLint'i yerel olarak ekler ve **`package.json`** dosyasına bağımlılığı kaydeder.
+        
+    3. **ESLint Yapılandırma Dosyasını Oluşturma:**
+        
+        ESLint'i kullanmak için bir yapılandırma dosyası oluşturmalısınız. Proje kök klasöründe **`.eslintrc.js`** veya **`.eslintrc.json`** gibi bir dosya oluşturabilirsiniz. Bu dosya, ESLint kurallarını ve yapılandırmalarını içerir.
+        
+        Örnek bir **`.eslintrc.js`** dosyası:
+        
+        ```jsx
+        javascriptCopy code
+        module.exports = {
+          extends: 'eslint:recommended',
+          rules: {
+            // ESLint kurallarını burada tanımlayabilirsiniz.
+          },
+        };
+        ```
+        
+    4. **ESLint'i Kullanma:**
+        
+        Artık ESLint'i projenizde kullanabilirsiniz. Terminalde veya komut istemcisinde aşağıdaki komutu çalıştırarak projenizi analiz edebilirsiniz:
+        
+        ```bash
+        npx eslint your-file.js
+        ```
+        
+        Burada **`your-file.js`** kısmını kontrol etmek istediğiniz JavaScript dosyasının adıyla değiştirin.
+        
+    
+    **Yerel ve Global Kurulum:**
+    
+    - **Yerel Kurulum:** Yukarıdaki adımları takip ederek projenize yerel olarak ESLint kurabilirsiniz. Bu, her proje için ayrı ayrı ESLint yapılandırmalarını ve kurallarını belirlemenize olanak tanır.
+    - **Global Kurulum:** ESLint'i sistem düzeyinde yani global olarak kurmak isterseniz, aşağıdaki komutu kullanabilirsiniz:
+        
+        ```bash
+        npm install -g eslint
+        ```
+        
+        Bu, ESLint'i tüm projelerinizde kullanabilir hale getirir, ancak bu şekilde her projede ayrı ayrı yapılandırmalar yapmanız gerekebilir. Global kurulum genellikle bir ekip veya organizasyon için ortak bir kurulumdur.
+        
 - **ESLint Konfigürasyonu ve Ayar Dosyası:**
-    - **`.eslintrc`** dosyasının oluşturulması
-    - Kuralların ve ayarların belirlenmesi
-    - Standart Ayar Kümeleri (Airbnb, Standard, vb.) kullanımı
+    
+    ESLint'in kullanılması için bir konfigürasyon dosyası oluşturmanız gerekmektedir. Bu dosya, ESLint'in hangi kuralları uygulayacağını ve kodunuzun nasıl denetleneceğini belirler. İşte bu konfigürasyonun nasıl yapılacağına dair adımlar:
+    
+    1. **`.eslintrc` Dosyasının Oluşturulması:**
+        
+        ESLint konfigürasyonu için **`.eslintrc`** adında bir dosya oluşturmalısınız. Bu dosya, JavaScript kodunuzu nasıl denetlemek istediğinizi belirler.
+        
+        Örneğin, JSON formatında bir **`.eslintrc`** dosyası:
+        
+        ```json
+        {
+          "extends": "eslint:recommended",
+          "rules": {
+            // Kuralları burada belirleyebilirsiniz
+          }
+        }
+        ```
+        
+    2. **Kuralların ve Ayarların Belirlenmesi:**
+        
+        **`.eslintrc`** dosyası içinde, belirli kuralları ve ayarları tanımlamak için **`rules`** ve **`env`** gibi bölümleri kullanabilirsiniz. Kurallar, kodunuzun hangi kurallara uygun olup olmadığını belirlerken, ayarlar çevresel parametreleri tanımlar.
+        
+        Örneğin, **`"semi"`** kuralını **`error`** olarak ayarlamak için:
+        
+        ```json
+        {
+          "rules": {
+            "semi": "error"
+          }
+        }
+        ```
+        
+        Bu, noktalı virgül kullanımını zorunlu hale getirir ve noktalı virgül kullanılmadığında hata mesajı üretir.
+        
+    3. **Standart Ayar Kümeleri (Airbnb, Standard, vb.) Kullanımı:**
+        
+        ESLint'i hızlı bir şekilde yapılandırmak için popüler standart ayar kümelerini kullanabilirsiniz. Bu ayar kümeleri, birçok kuralları ve en iyi uygulamaları içerir ve projenizin gereksinimlerine uygun bir kod tarzı sağlar.
+        
+        Örneğin, Airbnb JavaScript stil rehberini kullanmak için **`eslint-config-airbnb`** paketini projenize ekleyebilirsiniz. İlk olarak bu paketi projenize eklemek için aşağıdaki komutu kullanın:
+        
+        ```bash
+        npm install eslint-config-airbnb --save-dev
+        ```
+        
+        Daha sonra **`.eslintrc`** dosyanızı şu şekilde yapılandırabilirsiniz:
+        
+        ```json
+        {
+          "extends": "airbnb"
+        }
+        ```
+        
+        Bu, Airbnb stil rehberini kullanacak ve projenizin kodunu bu stile göre denetleyecektir.
+        
+    
+    Bu şekilde ESLint konfigürasyonunu oluşturarak, kod kalitesini artırabilir, projenizin stilini ve kalitesini tutarlı bir şekilde yönetebilirsiniz. Ayarlar ve kurallar, projenizin ihtiyaçlarına ve tercihlerinize göre özelleştirilebilir.
+    
 - **Temel ESLint Kuralları ve Ayarları:**
-    - İndentasyon ve girinti ayarları
-    - Çift veya tek tırnak kullanımı
-    - Noktalı virgül gerekliliği
-    - Boşluk ve satır araları kuralları
+    
+    ESLint, temel kod stilini düzenlemek ve kodun okunabilirliğini ve kalitesini artırmak için bir dizi kuralları ve ayarları içerir. İşte temel ESLint kuralları ve ayarlarından bazıları:
+    
+    1. **İndentasyon ve Girinti Ayarları:**
+        
+        İndentasyon ve girinti, kodun okunabilirliği için önemlidir. ESLint, girinti ayarlarını kontrol etmek için **`"indent"`** kuralını kullanır.
+        
+        Örnek bir **`.eslintrc`** dosyasında girinti ayarları:
+        
+        ```json
+        {
+          "rules": {
+            "indent": ["error", 2]
+          }
+        }
+        ```
+        
+        Yukarıdaki örnek, her girintinin 2 boşluk olması gerektiğini belirtir.
+        
+    2. **Çift veya Tek Tırnak Kullanımı:**
+        
+        Kodunuzda çift tırnak (**`"`**) veya tek tırnak (**`'`**) kullanımını denetlemek için **`"quotes"`** kuralını kullanabilirsiniz.
+        
+        Örnek bir **`.eslintrc`** dosyasında tırnak kullanımı ayarı:
+        
+        ```json
+        {
+          "rules": {
+            "quotes": ["error", "single"]
+          }
+        }
+        ```
+        
+        Yukarıdaki örnek, tek tırnak kullanımını zorunlu hale getirir.
+        
+    3. **Noktalı Virgül Gerekliliği:**
+        
+        Noktalı virgül kullanımını denetlemek için **`"semi"`** kuralını kullanabilirsiniz.
+        
+        Örnek bir **`.eslintrc`** dosyasında noktalı virgül gerekliliği ayarı:
+        
+        ```json
+        {
+          "rules": {
+            "semi": ["error", "always"]
+          }
+        }
+        ```
+        
+        Yukarıdaki örnek, her ifade sonunda noktalı virgül kullanılmasını zorunlu hale getirir.
+        
+    4. **Boşluk ve Satır Araları Kuralları:**
+        
+        Kodunuzdaki boşlukların ve satır aralarının düzenliliğini denetlemek için **`"space-before-function-paren"`** ve **`"newline-before-return"`** gibi kuralları kullanabilirsiniz.
+        
+        Örnek bir **`.eslintrc`** dosyasında boşluk ve satır araları ayarları:
+        
+        ```json
+        {
+          "rules": {
+            "space-before-function-paren": ["error", "never"],
+            "newline-before-return": "error"
+          }
+        }
+        ```
+        
+        Yukarıdaki örnek, fonksiyon parantezlerinden önce boşluk kullanımını yasaklar ve **`return`** ifadesinden önce satır arası eklenmesini zorunlu kılar.
+        
 - **Özel Kuralların Eklenmesi ve Değiştirilmesi:**
-    - Kuralların değiştirilmesi veya devre dışı bırakılması
-    - Projeye özgü kuralların eklenmesi
-    - Özel kuralların hata seviyeleri
+    
+    ESLint, özelleştirilmiş kuralların eklenmesine ve mevcut kuralların değiştirilmesine izin verir. Bu, projenizin özel gereksinimlerini karşılamak için çok kullanışlıdır. İşte özel kuralların eklenmesi ve değiştirilmesi ile ilgili adımlar:
+    
+    1. **Kuralların Değiştirilmesi veya Devre Dışı Bırakılması:**
+        
+        ESLint kurallarını değiştirmek veya devre dışı bırakmak için **`.eslintrc`** dosyanızdaki **`"rules"`** bölümünü kullanabilirsiniz. Örneğin, **`"semi"`** kuralının gereksiz olduğunu düşünüyorsanız, bu kuralı devre dışı bırakabilirsiniz:
+        
+        ```json
+        {
+          "rules": {
+            "semi": "off"
+          }
+        }
+        ```
+        
+        Ya da kuralın seviyesini değiştirebilirsiniz. Örneğin, **`"semi"`** kuralını sadece uyarı olarak ayarlamak için:
+        
+        ```json
+        {
+          "rules": {
+            "semi": "warn"
+          }
+        }
+        ```
+        
+    2. **Projeye Özgü Kuralların Eklenmesi:**
+        
+        Projeye özgü kurallar eklemek için, **`.eslintrc`** dosyanızdaki **`"rules"`** bölümüne yeni kurallar ekleyebilirsiniz. Özel bir kural oluşturmak için de bir JavaScript işlevi kullanabilirsiniz. Örneğin, projenizde bazı özel adlandırma kuralları uygulamak istiyorsanız:
+        
+        ```json
+        {
+          "rules": {
+            "my-custom-rule": "error"
+          }
+        }
+        ```
+        
+        Ardından, bu özel kuralı bir eklenti veya özel bir kodla projenize eklemelisiniz.
+        
+    3. **Özel Kuralların Hata Seviyeleri:**
+        
+        ESLint kuralları için belirleyebileceğiniz hata seviyeleri şunlardır: **`"off"`** (kapalı), **`"warn"`** (uyarı), ve **`"error"`** (hata). Özel bir kuralı bu seviyelerden birine ayarlayarak, kuralın ciddiyetini belirleyebilirsiniz.
+        
+        Örneğin, bir özel kuralı **`"error"`** seviyesine ayarlamak, bu kurala uymayan kodun hata olarak işaretlenmesini sağlar. **`"warn"`** seviyesinde ise kodun uyarı olarak işaretlenmesini sağlar.
+        
+        ```json
+        {
+          "rules": {
+            "my-custom-rule": "error"
+          }
+        }
+        ```
+        
+        Özel kuralları projenizin gereksinimlerine ve standartlarına göre ayarlayarak, kodunuzun stilini ve kalitesini yönetebilirsiniz.
+        
 - **Terminal ve Editör Entegrasyonu:**
-    - ESLint'i terminalden çalıştırma
-    - Editör eklentileri ile kod denetimi
-    - Otomatik düzeltme seçenekleri
+    1. **ESLint'i Terminalden Çalıştırma:**
+        
+        ESLint'i terminalden çalıştırmak için şu komutu kullanabilirsiniz:
+        
+        ```bash
+        npx eslint your-file.js
+        ```
+        
+        Burada **`"your-file.js"`** kısmını kontrol etmek istediğiniz JavaScript dosyasının adı ile değiştirin. Bu komut, dosyanızı ESLint ile denetler ve hataları/uyarıları terminalde görüntüler.
+        
+    2. **Editör Eklentileri ile Kod Denetimi:**
+        
+        Birçok popüler kod düzenleyici ve IDE, ESLint'i entegre etmek için eklentiler sunar. Bu eklentiler, kodunuzu düzenlerken ESLint kurallarını otomatik olarak denetler ve hataları/uyarıları gösterir. Bazı yaygın editör eklentileri şunlardır:
+        
+        - Visual Studio Code: ESLint eklentisi (**`dbaeumer.vscode-eslint`**)
+        - Sublime Text: ESLint eklentisi (**`SublimeLinter-eslint`**)
+        - Atom: linter-eslint paketi
+        
+        Bu eklentileri kurarak, kod düzenleyicinizde kodunuzu yazarken sürekli olarak ESLint denetimi yapabilirsiniz. Hataları ve uyarıları düzenleyicide işaretlenir ve kolayca düzeltebilirsiniz.
+        
+    3. **Otomatik Düzeltme Seçenekleri:**
+        
+        ESLint, bazı hataları otomatik olarak düzeltebilme yeteneğine sahiptir. Bu, **`--fix`** bayrağıyla ESLint komutunun kullanılmasıyla yapılır. Örneğin:
+        
+        ```bash
+        npx eslint --fix your-file.js
+        ```
+        
+        Bu komut, belirli düzeltilebilir hataları otomatik olarak düzeltecektir. Ancak bazı hatalar otomatik olarak düzeltilemeyebilir ve manuel müdahale gerekebilir
+        
 - **Dosya ve Klasör İgnorlama:**
-    - **`.eslintignore`** dosyasıyla dosya/klasörlerin atlanması
-    - Test veya üretim klasörlerinin denetimi dışında bırakılması
+    
+    ESLint ile dosya ve klasörlerin denetimi dışında bırakılması için **`.eslintignore`** dosyasını kullanabilirsiniz. Bu dosya, ESLint'in denetimden geçirmemesi gereken dosyaları ve klasörleri belirtmenize olanak tanır. İşte bu konuyla ilgili ayrıntılar:
+    
+    1. **`.eslintignore` Dosyasıyla Dosya/Klasör İgnorlama:**
+        
+        **`.eslintignore`** dosyasını projenizin kök dizininde oluşturabilirsiniz. Bu dosya, denetlenmemesi gereken dosyaların ve klasörlerin listesini içerir. İşte basit bir örnek:
+        
+        ```bash
+        # Bu dosya ve klasörleri denetimden geçirme
+        build/
+        dist/
+        node_modules/
+        ```
+        
+        Yukarıdaki örnek, **`build/`**, **`dist/`** ve **`node_modules/`** gibi dosya ve klasörleri ESLint denetiminden geçirmeyecektir.
+        
+    2. **Test veya Üretim Klasörlerinin Denetimi Dışında Bırakılması:**
+        
+        Özellikle test veya üretim klasörleri gibi özel klasörleri denetim dışında bırakmak isterseniz, bu klasörleri **`.eslintignore`** dosyasına ekleyebilirsiniz. Örneğin:
+        
+        ```bash
+        # Test klasörünü denetimden geçirme
+        test/
+        
+        # Üretim klasörünü denetimden geçirme
+        dist/
+        ```
+        
+        Bu şekilde, test veya üretim için kullanılan dosyaların ve klasörlerin ESLint denetiminden geçirilmesini önleyebilirsiniz.
+        
 - **ESLint ile Otomatik Kod Düzeltme:**
-    - Otomatik düzeltme modunun kullanılması
-    - Düzeltilebilir hataların otomatik olarak çözülmesi
+    
+    ESLint, düzeltilmesi mümkün olan hataları otomatik olarak düzelten bir otomatik düzeltme modu sunar. Bu mod, kodunuzdaki belirli hataları düzeltmek ve stil uyarılarını otomatik olarak düzeltmek için kullanılır. İşte bu konu hakkında ayrıntılar:
+    
+    1. **Otomatik Düzeltme Modunun Kullanılması:**
+        
+        ESLint ile otomatik kod düzeltme modunu kullanmak için, ESLint komutunu çalıştırırken **`--fix`** bayrağını kullanmalısınız. Örneğin:
+        
+        ```bash
+        npx eslint --fix your-file.js
+        ```
+        
+        Bu komut, belirli bir JavaScript dosyasındaki düzeltilmesi mümkün olan hataları ve stil uyarılarını otomatik olarak düzeltecektir.
+        
+    2. **Düzeltilebilir Hataların Otomatik Olarak Çözülmesi:**
+        
+        Otomatik düzeltme modu, belirli hataları ve stil uyarılarını otomatik olarak düzeltebilir. Örneğin, eksik noktalı virgüller, yanlış girintiler veya kullanılmayan değişkenler gibi hatalar otomatik olarak düzeltilebilir.
+        
+        Ancak, bazı hatalar otomatik olarak düzeltilmeyebilir ve manuel müdahale gerekebilir. Bu nedenle otomatik düzeltme işlemi tamamlandığında, hala dikkatlice kodunuzu incelemeniz önerilir.
+        
 - **Proje Entegrasyonu ve Süreklilik (CI/CD) Akışı:**
-    - ESLint'in GitHub veya diğer CI/CD araçlarına entegrasyonu
-    - Hata çıktıları ve raporların kullanımı
+    
+    ESLint'i GitHub veya diğer CI/CD (Sürekli Entegrasyon / Sürekli Dağıtım) araçlarına entegre etmek, kodunuzun otomatik olarak denetlenmesini ve stil uyarılarının raporlanmasını sağlar. Bu, projenizin kalitesini ve tutarlılığını korumak için önemlidir. İşte bu konu hakkında ayrıntılar:
+    
+    1. **ESLint'in GitHub veya Diğer CI/CD Araçlarına Entegrasyonu:**
+        
+        ESLint'i CI/CD araçlarına entegre etmek, her yeni kod değişikliği yapıldığında veya her işlem sırasında kodun otomatik olarak denetlenmesini sağlar. Bu, hataların ve stil uyarılarının erken tespit edilmesine ve düzeltilmesine yardımcı olur.
+        
+        - **GitHub Actions Entegrasyonu:** GitHub Actions, projenizin GitHub deposunda yer alan her yeni taahhüdü otomatik olarak denetleyebilir. ESLint'i GitHub Actions ile entegre etmek için bir iş akışı (workflow) oluşturabilirsiniz.
+        - **Travis CI veya CircleCI Entegrasyonu:** Diğer CI/CD araçları olan Travis CI veya CircleCI gibi araçlar da ESLint'i projenize entegre etmenize olanak tanır. Bu araçlar, projenizdeki her taahhüdü denetleyebilir ve hata raporlarını üretebilir.
+    2. **Hata Çıktıları ve Raporların Kullanımı:**
+        
+        CI/CD araçları, ESLint tarafından üretilen hata çıktılarını ve raporları sunabilir. Bu raporlar, hataları ve stil uyarılarını içerir ve projenin hangi bölümlerinin bu kurallara uymadığını gösterir.
+        
+        - **Hata Raporları:** CI/CD araçları, ESLint tarafından üretilen hata raporlarını görüntülemenizi sağlar. Bu raporlar, hangi satırlarda ve dosyalarda hataların bulunduğunu ve bu hataların ne olduğunu açıklar.
+        - **Stil Uyarıları:** Aynı şekilde, stil uyarıları da raporlanır. Bu uyarılar, kodunuzun belirli stil kurallarına uymadığını gösterir.
+    3. **Düzeltmeler ve Geri Bildirim:** CI/CD araçları, hataların otomatik olarak düzeltilmesine veya kullanıcılara geri bildirim verilmesine olanak tanır. Örneğin, hatalar otomatik olarak düzeltilirse veya bir PR (Pull Request) içinde stil uyarıları görüntülenirse, geliştiricilere hızlı bir geri bildirim sağlanır.
+    
+    ESLint'i projenizin CI/CD akışına entegre etmek, projenizin kod kalitesini ve tutarlılığını korumak için önemli bir adımdır. Bu sayede hataların erken tespit edilmesi ve düzeltilmesi sağlanır, projenizin daha güvenilir ve bakımı daha kolay olur.
+    
 - **Özelleştirilmiş Kurallar ve Pluginler:**
-    - Özel kuralların oluşturulması
-    - Varolan kuralların özelleştirilmesi
-    - Üçüncü taraf pluginlerin entegrasyonu
+    
+    ESLint, projenizin ihtiyaçlarına göre özelleştirilmiş kuralların oluşturulmasına, varolan kuralların özelleştirilmesine ve üçüncü taraf pluginlerin entegrasyonuna izin verir. Bu sayede projenizin kod stilini ve kalitesini daha fazla kontrol edebilirsiniz. İşte bu konu hakkında ayrıntılar:
+    
+    1. **Özel Kuralların Oluşturulması:**
+        
+        Özel bir kural oluşturmak için, **`--init`** komutunu kullanarak **`.eslintrc`** dosyanızı yapılandırabilirsiniz. Ardından, **`rules`** bölümüne özel kuralınızı ekleyebilirsiniz. Örneğin, projenizde belirli bir adlandırma kuralı uygulamak istiyorsanız:
+        
+        ```json
+        {
+          "rules": {
+            "my-custom-rule": "error"
+          }
+        }
+        ```
+        
+        Özel bir kural oluşturmak için, genellikle bir JavaScript modülü yazmanız ve bu modülü **`.eslintrc`** dosyanızda eklemeniz gerekir.
+        
+    2. **Varolan Kuralların Özelleştirilmesi:**
+        
+        Varolan ESLint kurallarını özelleştirmek için **`.eslintrc`** dosyanızdaki **`rules`** bölümünü kullanabilirsiniz. Örneğin, varsayılan bir kuralın seviyesini değiştirmek veya kapatmak isterseniz:
+        
+        ```json
+        {
+          "rules": {
+            "semi": "off"
+          }
+        }
+        ```
+        
+        Bu, **`semi`** kuralını tamamen devre dışı bırakır.
+        
+    3. **Üçüncü Taraf Pluginlerin Entegrasyonu:**
+        
+        ESLint, üçüncü taraf pluginlerin kullanılmasına olanak tanır. Bu pluginler, belirli projeler için özelleştirilmiş kurallar ve denetimler sağlar. Örneğin, Airbnb tarafından geliştirilen bir stil kılavuzu olan "eslint-config-airbnb" entegrasyonunu kullanmak için şunları yapabilirsiniz:
+        
+        - İlk olarak, ilgili plugini veya kuralları projenize npm veya yarn ile ekleyin:
+            
+            ```bash
+            npm install eslint-config-airbnb --save-dev
+            ```
+            
+        - Ardından, **`.eslintrc`** dosyanızda bu plugini ve ayarlarınızı yapılandırın:
+            
+            ```json
+            {
+              "extends": "airbnb"
+            }
+            ```
+            
+        
+        Bu, Airbnb stil kurallarını projenize entegre edecektir.
+        
+    
+    Özelleştirilmiş kurallar ve üçüncü taraf pluginler, projenizin gereksinimlerine ve stil tercihlerinize uygun bir kod denetimi yapmanıza olanak tanır. Bu, kod kalitesini ve tutarlılığını daha fazla kontrol etmenize yardımcı olur.
+    
 - **Preset Kullanımı ve Özelleştirme:**
-    - Önceden belirlenmiş kurallar kümesi (preset) kullanımı
-    - Preset kurallarının düzenlenmesi veya devre dışı bırakılması
+    
+    ESLint, önceden belirlenmiş kurallar kümesi olarak adlandırılan "presets"leri kullanmanıza izin verir. Presetler, belirli bir kod stilini veya bir kuruluşun stil rehberini uygulayan kuralların bir kombinasyonunu içerir. Bu, projenizin kodunun belirli bir stil standardına uygun olmasını sağlar. İşte bu konu hakkında ayrıntılar:
+    
+    1. **Önceden Belirlenmiş Kurallar Kümesi (Preset) Kullanımı:**
+        
+        Önceden belirlenmiş bir kurallar kümesini **`.eslintrc`** dosyanızda kullanmak için **`extends`** ayarını kullanabilirsiniz. Örneğin, popüler bir JavaScript stil kılavuzu olan "Airbnb" stilini kullanmak için:
+        
+        - İlk olarak, ilgili preseti projenize npm veya yarn ile ekleyin:
+            
+            ```bash
+            npm install eslint-config-airbnb --save-dev
+            ```
+            
+        - Ardından, **`.eslintrc`** dosyanızda bu preseti kullanın:
+            
+            ```json
+            {
+              "extends": "airbnb"
+            }
+            ```
+            
+        
+        Bu, Airbnb stil kurallarını projenize entegre edecektir. Ayrıca, birden fazla preseti birleştirerek kendi özel kurallar kümenizi oluşturabilirsiniz.
+        
+    2. **Preset Kurallarının Düzenlenmesi veya Devre Dışı Bırakılması:**
+        
+        Önceden belirlenmiş bir presetin kurallarını düzenlemek veya devre dışı bırakmak isterseniz, **`.eslintrc`** dosyanızda ilgili kuralları ayarlayabilirsiniz. Örneğin, Airbnb stilini kullanırken belirli bir kuralı kapatmak için:
+        
+        ```json
+        {
+          "extends": "airbnb",
+          "rules": {
+            "my-custom-rule": "off"
+          }
+        }
+        ```
+        
+        Bu, **`my-custom-rule`** adlı bir kuralları devre dışı bırakacaktır.
+        
+    
+    Presetler, projenizde belirli bir kod stilini hızlı bir şekilde uygulamanıza ve gereksinimlerinizi karşılamanıza yardımcı olur. Bu şekilde, projenizin kod kalitesini ve tutarlılığını artırabilirsiniz.
+    
 - **ESLint Hooks ve Git Commit Denetimi:**
-    - **`pre-commit`** ve **`pre-push`** kancalarıyla kod denetimi
-    - Sadece değiştirilmiş dosyaların denetlenmesi
+    
+    ESLint, Git commit işlemleri öncesinde veya öncesindeki kancaları kullanarak kod denetimi yapmanıza olanak tanır. Bu, yalnızca hatalı veya uygun olmayan kodları angaje etmeyi değil, aynı zamanda yalnızca değiştirilmiş dosyaları denetlemeyi sağlar. İşte bu konu hakkında ayrıntılar:
+    
+    1. **`pre-commit` ve `pre-push` Kancalarıyla Kod Denetimi:**
+        - **`pre-commit` Kancası:** Bu kancanın kullanılması, bir geliştirici bir işlemin **`git commit`** komutunu çalıştırdığında kod denetiminin yapılmasını sağlar. Bu, kötüye kullanımı engellemeye, hataların erken tespitine ve proje kod kalitesinin korunmasına yardımcı olur.
+        - **`pre-push` Kancası:** Bu kancanın kullanılması, bir geliştirici bir işlemin **`git push`** komutunu çalıştırdığında kod denetiminin yapılmasını sağlar. Bu, kodunuzun uzak depoya gönderilmeden önce denetlenmesine olanak tanır ve diğer ekip üyelerine uygun bir kod kalitesi sağlar.
+    2. **Sadece Değiştirilmiş Dosyaların Denetlenmesi:**
+        
+        ESLint, yalnızca değiştirilmiş veya eklenmiş dosyaları denetlemek için Git kancalarını kullanabilir. Bu, büyük projelerde tüm kod tabanını denetlemek yerine sadece değişen kodun denetlenmesini sağlar, böylece denetim süresini azaltır ve verimliliği artırır.
+        
+        Bu işlemi gerçekleştirmek için, **`lint-staged`** gibi araçlar kullanabilirsiniz. Örneğin, **`lint-staged`** ile sadece değiştirilmiş dosyaları denetlemek için aşağıdaki adımları izleyebilirsiniz:
+        
+        - İlk olarak, **`lint-staged`** paketini projenize ekleyin:
+            
+            ```bash
+            npm install lint-staged --save-dev
+            ```
+            
+        - Daha sonra, projenizin **`package.json`** dosyasında **`"lint-staged"`** ayarını yapılandırın:
+            
+            ```json
+            "lint-staged": {
+              "*.js": ["eslint"]
+            }
+            ```
+            
+        
+        Bu, **`.js`** uzantılı dosyaları ESLint ile denetlemek için **`lint-staged`**'i kullanacaktır.
+        
+        - Son olarak, Git kancalarını yapılandırın (**`pre-commit`** veya **`pre-push`**) ve **`lint-staged`** komutunu kullanarak değiştirilmiş dosyaları denetlemesini sağlayın.
+    
+    Bu şekilde, Git kancaları ve **`lint-staged`** gibi araçlar kullanarak kodunuzu otomatik olarak denetleyebilir ve yalnızca değiştirilmiş dosyaları denetleyerek verimliliği artırabilirsiniz.
+    
 - **Yazılım Mimarisi ve Projeler Arası Kullanım:**
-    - Modüler projelerde ESLint yapılandırması
-    - Tek bir projede birden fazla ESLint kurallarının yönetimi
+    
+    ESLint, yazılım projelerinizin farklı yapısına ve ihtiyaçlarına uyacak şekilde yapılandırılabilir. Ayrıca, modüler projelerde ve tek bir projede birden fazla ESLint yapılandırması yönetimi mümkündür. İşte bu konu hakkında ayrıntılar:
+    
+    1. **Modüler Projelerde ESLint Yapılandırması:**
+        
+        Modüler bir proje, farklı alt bileşenler veya modüller içeren bir projeyi tanımlar. Her bir alt bileşen veya modül, kendi kod stilini ve ESLint yapılandırmasını gerektirebilir. Bu durumda, projenizi modüller halinde bölümlendirip her bir modül için ayrı bir **`.eslintrc`** dosyası oluşturabilirsiniz.
+        
+        Örneğin, projeniz şu şekilde bir yapıya sahipse:
+        
+        ```go
+        goCopy code
+        my-project/
+          ├── module1/
+          │   └── .eslintrc.json
+          ├── module2/
+          │   └── .eslintrc.json
+          ├── module3/
+          │   └── .eslintrc.json
+          ├── .eslintrc.json
+          └── package.json
+        
+        ```
+        
+        Her modül kendi **`.eslintrc.json`** dosyasına sahip olabilir ve projenin kökünde de bir **`.eslintrc.json`** dosyası bulunabilir. Bu, her modülün kendi kurallarını ve yapılandırmasını belirlemenize olanak tanır.
+        
+    2. **Tek Bir Projede Birden Fazla ESLint Kurallarının Yönetimi:**
+        
+        Tek bir projede birden fazla ESLint yapılandırması yönetmek isterseniz, her bir yapılandırmayı farklı bir dosya veya klasör altında saklayabilirsiniz. Örneğin, projenizde hem bir istemci (client) tarafı hem de bir sunucu (server) tarafı varsa, her iki tarafın farklı kurallara ihtiyacı olabilir.
+        
+        ```go
+        goCopy code
+        my-project/
+          ├── client/
+          │   └── .eslintrc.json
+          ├── server/
+          │   └── .eslintrc.json
+          ├── package.json
+          └── .eslintrc.json
+        
+        ```
+        
+        Bu şekilde, projenizin kökünde bulunan **`.eslintrc.json`** dosyası projenin genel kurallarını içerebilirken, her alt klasördeki **`.eslintrc.json`** dosyaları özelleştirilmiş kuralları içerebilir. Projeyi yürütürken veya her bir modülü geliştirirken, ilgili ESLint yapılandırmasını kullanabilirsiniz.
+        
+    
+    Bu yaklaşımlar, projelerinizin yapısına ve ihtiyaçlarına uygun olarak ESLint yapılandırmasını yönetmenize yardımcı olur ve kod kalitesi ve stilinin korunmasına katkıda bulunur.
+    
 - **Eş Zamanlı Düzenleme Uyarıları:**
-    - ESLint ile çalışırken diğer editörlerde düzenleme yaparken uyarıların görüntülenmesi
+    
+    ESLint ile çalışırken diğer editörlerde düzenleme yaparken uyarıların görüntülenmesi, birden fazla geliştiricinin aynı projeyi düzenlediği durumlarda hataların ve stil uyarılarının hızlı bir şekilde fark edilmesine yardımcı olabilir. Bu işlemi gerçekleştirmek için aşağıdaki adımları takip edebilirsiniz:
+    
+    1. **EditorConfig Kullanımı:** İlk adım, projenizde EditorConfig kullanmaktır. EditorConfig, farklı kod düzenleme araçlarında (VSCode, Sublime Text, IntelliJ IDEA, vb.) dosya biçimini düzenlemek için kullanılan bir dosya formatıdır. Her editörde uygun bir EditorConfig eklentisi yükleyin ve projenizin kök dizininde **`.editorconfig`** adında bir dosya oluşturun. Bu dosya, projenizin kod biçimlendirmesi ve stilini tanımlar.
+        
+        Örnek bir **`.editorconfig`** dosyası:
+        
+        ```makefile
+        # Üniversel EditorConfig dosyası
+        root = true
+        
+        [*]
+        indent_style = space
+        indent_size = 2
+        end_of_line = lf
+        charset = utf-8
+        trim_trailing_whitespace = true
+        insert_final_newline = true
+        ```
+        
+    2. **Editor Uyarıları:** ESLint ile çalışırken diğer editörlerde düzenleme yaparken uyarıları görüntülemek için, projenizin kök dizininde ESLint kurallarını ve yapılandırmayı içeren bir **`.eslintrc`** dosyası bulunmalıdır. Bu dosya, kodunuzun stilini ve kurallarını tanımlar.
+    3. **Editör Eklentisi:** Editörünüz için ESLint eklentisini kurun. Bu eklenti, kodunuzu düzenlerken ESLint kurallarını ve uyarılarını görüntüler. Çoğu popüler kod düzenleyici, ESLint entegrasyonu için eklentiler sunar.
+    4. **EditorConfig ve ESLint Uyumlu Hale Getirme:** Editörünüzdeki EditorConfig ve ESLint ayarlarınızın projenizin **`.editorconfig`** ve **`.eslintrc`** dosyalarıyla uyumlu olduğundan emin olun. Bu, düzenleme yaparken her iki sistem tarafından uyarıların görüntülenmesini sağlar.
+    5. **Düzenleme ve Anlık Geri Bildirim:** Şimdi, projeyi farklı editörlerde açın ve kodu düzenlemeye başlayın. ESLint kurallarına uymayan veya stil uyarılarına yol açan düzenlemeler yaptığınızda, ilgili editörde uyarılar veya hatalar hemen görüntülenir. Bu, hızlı geri bildirim almanıza ve kodunuzu düzeltmenize yardımcı olur.
+    
+    ESLint ve EditorConfig gibi araçlar, çoklu geliştirici projelerinde kod kalitesini ve tutarlılığını korumak için çok önemlidir. Bu adımları izleyerek, eş zamanlı düzenleme sırasında hızlı bir şekilde uyarıları ve hataları fark edebilir ve düzeltebilirsiniz.
+    
 - **Uyumlu Modül Sistemi Ayarları:**
-    - CommonJS, ES6 ve diğer modül sistemlerine uygun ayarlamalar
+    
+    ESLint, farklı JavaScript modül sistemlerine (CommonJS, ES6, AMD, vb.) uygun şekilde yapılandırılabilir. Projenizin kullanmış olduğu modül sistemi ve tarzına uygun ayarlamaları yaparak kod denetimini daha verimli hale getirebilirsiniz. İşte bu konu hakkında ayrıntılar:
+    
+    1. **CommonJS veya ES6 Modül Sistemi Seçimi:**
+        
+        Öncelikle, projenizin hangi modül sistemiyle çalıştığını veya kullanmak istediğinizi belirleyin. İki yaygın modül sistemi, CommonJS ve ES6'dır.
+        
+        - **CommonJS:** Node.js tarafından kullanılan ve yaygın olarak kullanılan bir modül sistemidir. Modüller **`require`** ve **`module.exports`** kullanılarak tanımlanır.
+        - **ES6 Modül Sistemi:** ECMAScript 6 (ES6) ile gelen modül sistemi, modern JavaScript uygulamalarında kullanılır. Modüller **`import`** ve **`export`** kullanılarak tanımlanır.
+    2. **Modül Sistemine Göre ESLint Yapılandırması:**
+        
+        Hangi modül sistemiyle çalıştığınıza bağlı olarak ESLint yapılandırmasını ayarlayın. Örneğin, CommonJS kullanıyorsanız, ESLint yapılandırmanız şu şekilde olabilir:
+        
+        ```json
+        {
+          "env": {
+            "node": true},
+          "extends": "eslint:recommended",
+          "rules": {
+            // CommonJS ile uyumlu kurallar veya özelleştirmeler
+          }
+        }
+        ```
+        
+        ES6 modül sistemi kullanıyorsanız, ESLint yapılandırmanız şu şekilde olabilir:
+        
+        ```json
+        {
+          "env": {
+            "es6": true},
+          "extends": "eslint:recommended",
+          "parserOptions": {
+            "ecmaVersion": 6,
+            "sourceType": "module"
+          },
+          "rules": {
+            // ES6 ile uyumlu kurallar veya özelleştirmeler
+          }
+        }
+        ```
+        
+        Bu ayarlar, ESLint'in projenizin modül sistemine göre kodunuzu denetlemesini sağlar.
+        
+    3. **Modül Sistemine Göre Kuralların Ayarlanması:**
+        
+        Projeye özgü ihtiyaçlarınıza bağlı olarak ESLint kurallarını ayarlayabilirsiniz. Özellikle modül sistemiyle ilgili özelleştirmeler yapmak istiyorsanız, projenizin ihtiyaçlarına uygun kuralları veya eklentileri etkinleştirebilir veya devre dışı bırakabilirsiniz.
+        
+    
+    ESLint, farklı modül sistemlerine uygun şekilde yapılandırılabilecek esnek bir araçtır. Projelerinizin gereksinimlerine ve kullanmış olduğunuz modül sistemine bağlı olarak ESLint yapılandırmasını özelleştirebilirsiniz. Bu, kod kalitesini ve tutarlılığını koruma açısından önemlidir.
+    
 - **Özelleştirilmiş Raporlama ve Çıktılar:**
-    - ESLint çıktısının raporlama formatının özelleştirilmesi
-    - Kendi hatalarınıza özel mesajlar eklenmesi
+    
+    ESLint çıktısının özelleştirilmesi, projenizin gereksinimlerine ve takımınızın tercihlerine uygun bir şekilde hata ve uyarıları raporlamak için önemlidir. Ayrıca, kendi özel hata mesajlarınızı eklemek de kod tabanınızın daha anlaşılır olmasına yardımcı olabilir. İşte bu konu hakkında ayrıntılar:
+    
+    1. **ESLint Çıktı Raporlarını Özelleştirme:**
+        
+        ESLint, çıktı raporlarını özelleştirmek için çeşitli seçenekler sunar. Bu, çıktıların nasıl görüntüleneceğini, hangi formatların kullanılacağını ve hataların nasıl gruplandırılacağını kontrol etmenize olanak tanır. Çıktı raporlarını özelleştirmek için aşağıdaki adımları izleyebilirsiniz:
+        
+        - **`.eslintrc` Dosyası Ayarları:** ESLint yapılandırma dosyanızda, **`formatter`** veya **`format`** ayarları ile hangi raporlama biçiminin kullanılacağını belirleyebilirsiniz. Örneğin, JSON formatında bir çıktı almak için:{
+          "formatter": "json"
+        }
+            
+            ```json
+            
+            ```
+            
+        - **ESLint Raporlama Eklentileri:** ESLint için birçok üçüncü taraf raporlama eklentisi bulunur. Örneğin, **`eslint-formatter-pretty`** gibi bir eklenti kullanarak daha insan okunabilir bir çıktı elde edebilirsiniz. Bu eklentileri projenize ekleyerek ve ESLint yapılandırmanızda belirterek kullanabilirsiniz.
+        - **Kendi Özelleştirilmiş Raporlama Araçları:** Kendi özel raporlama araçlarınızı oluşturarak çıktıları tamamen özelleştirebilirsiniz. Bu, raporlarınızı projenizin ihtiyaçlarına ve stilinize göre özelleştirmenize olanak tanır.
+    2. **Kendi Hatalarınıza Özel Mesajlar Eklemek:**
+        
+        ESLint kurallarınızın veya özelleştirmelerinizin bir parçası olarak kendi hatalarınıza özel mesajlar eklemek isterseniz, ESLint kural dosyalarınızda bu mesajları tanımlayabilirsiniz. Örneğin, özel bir kural oluştururken:
+        
+        ```jsx
+        javascriptCopy code
+        module.exports = {
+          rules: {
+            'my-custom-rule': {
+              create: function(context) {
+                return {
+                  Identifier(node) {
+                    if (node.name === 'customError') {
+                      context.report({
+                        node,
+                        message: 'Bu özel bir hata mesajıdır.'
+                      });
+                    }
+                  }
+                };
+              }
+            }
+          }
+        };
+        ```
+        
+        Bu, **`my-custom-rule`** adlı özel bir kuralı tanımlar ve **`context.report`** ile özel bir hata mesajı ekler.
+        
+        Bunu projenizde daha karmaşık kurallar ve özel mesajlar için kullanabilirsiniz. Özelleştirilmiş hata mesajları, kodunuzu denetlerken daha açıklayıcı hale getirmenize yardımcı olabilir.
+        
+    
+    ESLint çıktılarını özelleştirmek ve özel hata mesajları eklemek, projenizin kod kalitesini ve okunabilirliğini artırmak için önemlidir. Bu sayede ekibinizin daha iyi bir şekilde kodu anlaması ve düzeltmeler yapması mümkün olur.
+    
 - **ESLint İntegrasyonunun İleri Seviye Araçlarla Kullanımı:**
-    - Linting sonuçlarının dashboardlarda görüntülenmesi (örn. SonarQube)
-    - Süreklilik akışı içinde otomatik düzeltme ve test entegrasyonu
+    
+    ESLint, geliştirme sürecinizi daha da iyileştirmek ve kod kalitesini yönetmek için bir dizi ileri seviye araç ve entegrasyon ile kullanılabilir. Bu araçlar, linting sonuçlarının daha verimli bir şekilde yönetilmesi, otomatik düzeltme ve süreklilik akışı içinde hızlı geri bildirim sağlama gibi işlemleri kolaylaştırır. İşte bu konu hakkında ayrıntılar:
+    
+    1. **Linting Sonuçlarının Dashboardlarda Görüntülenmesi:**
+        
+        Linting sonuçlarını daha geniş bir perspektiften görüntülemek ve takımınıza daha geniş bir bakış açısı sunmak için bir dashboard kullanabilirsiniz. Bu dashboardlar, farklı projelerin linting sonuçlarını merkezi bir konumda toplamanıza olanak tanır. Örneğin, **[SonarQube](https://www.sonarqube.org/)** gibi bir araç kullanarak aşağıdaki adımları izleyebilirsiniz:
+        
+        - SonarQube veya benzeri bir aracı projenize entegre edin.
+        - ESLint sonuçlarını bu araca göndermek için uygun bir eklenti veya entegrasyon kullanın.
+        - Dashboard üzerinden projelerinizin linting sonuçlarını izleyin, hataları ve uyarıları görsel olarak inceleyin ve raporlar oluşturun.
+        
+        Bu, projenizin genel sağlığını ve kod kalitesini daha iyi izlemenize yardımcı olur.
+        
+    2. **Süreklilik Akışı İçinde Otomatik Düzeltme ve Test Entegrasyonu:**
+        
+        ESLint'i süreklilik akışınıza (CI/CD) entegre ederek, kodunuzu otomatik olarak denetleyebilir, hataları tespit edebilir ve hatta bazı hataları otomatik olarak düzeltebilirsiniz. Aşağıdaki adımları izleyerek bu entegrasyonu yapabilirsiniz:
+        
+        - CI/CD aracınızı (örneğin, Jenkins, Travis CI, CircleCI) projenize entegre edin.
+        - CI/CD akışının bir parçası olarak ESLint'i çalıştırmak için gerekli komutları ekleyin.
+        - ESLint tarafından tespit edilen hataları veya uyumsuzlukları otomatik olarak düzelten bir komutu entegrasyon sürecinize ekleyebilirsiniz. Örneğin, **`eslint --fix`** komutu ile otomatik düzeltme yapabilirsiniz.
+        - Testlerinizin linting sonuçlarına etkisini izlemek ve hataların yeni kod eklemeleri ile nasıl değiştiğini görmek için sürekli entegrasyon akışını kullanın.
+        
+        Bu, kodunuzun sürekli olarak denetlenmesini ve kod kalitesinin korunmasını sağlar. Aynı zamanda hızlı bir geri bildirim döngüsü oluşturarak hataları hızla tespit edip düzeltebilirsiniz.
+        
+    
+    Bu ileri seviye araçlar ve entegrasyonlar, büyük projelerde ve ekiplerde ESLint kullanımını daha etkili hale getirebilir ve kod kalitesini daha iyi yönetmenize yardımcı olabilir.
+    
 - **Takım İçi Standartların Oluşturulması ve Uygulanması:**
-    - Proje ekibinde aynı kod standartlarının kullanılmasının sağlanması
-    - Ortak ESLint yapılandırmalarının ve kuralların paylaşımı
+    
+    Bir projede tutarlılık sağlamak ve takım üyelerinin aynı kod standartlarına uymasını sağlamak, kodun okunabilirliğini ve bakımını kolaylaştırır. ESLint gibi araçlar, takım içi kod standartlarını uygulamak için mükemmel bir yardımcıdır. İşte bu süreci başlatmak ve yönetmek için izlenebilecek bazı adımlar:
+    
+    1. **Kod Standartlarının Belirlenmesi:**
+        
+        İlk adım, projenizin veya organizasyonunuzun kullanmak istediği kod standartlarını belirlemektir. Bu standartlar, kod biçimi, girinti, değişken adları, fonksiyon tanımları ve daha birçok konuyu içerebilir. Standartları belirlerken, projenizin özel gereksinimlerini ve projede yer alan farklı dilleri düşünmelisiniz.
+        
+    2. **ESLint Kullanarak Standartların Tanımlanması:**
+        
+        Belirlediğiniz kod standartlarını ESLint kuralları ve yapılandırması ile tanımlayın. Bu, **`.eslintrc`** dosyasında yapılır. Örneğin:
+        
+        ```json
+        {
+          "rules": {
+            "indent": ["error", 2],
+            "quotes": ["error", "single"],
+            "semi": ["error", "always"]
+          }
+        }
+        ```
+        
+        Belirlediğiniz kurallar ve yapılandırmalar, kodunuzun denetlenmesi ve uygun olup olmadığının belirlenmesinde kullanılır.
+        
+    3. **ESLint Yapılandırmasının Paylaşılması:**
+        
+        Kurallarınızı ve yapılandırmanızı bir **`.eslintrc`** dosyasında tanımladıktan sonra, bu yapılandırmayı projenizin kök dizininde bulunan bir **`.eslintrc`** dosyasına ekleyin. Daha sonra bu dosyayı projenizin içindeki diğer geliştiricilerle paylaşın veya kod deposuna dahil edin.
+        
+    4. **Proje Ekibinin Eğitimi:**
+        
+        Standartları tanımladıktan ve paylaştıktan sonra, projenizin diğer üyelerini bu standartları kullanmaya ve uygun şekilde kod yazmaya eğitmelisiniz. Eğitim, hangi kuralların ve yapılandırmaların kullanılacağını ve kodları nasıl düzelteceklerini anlamalarını içermelidir.
+        
+    5. **ESLint Entegrasyonu:**
+        
+        Projede ESLint'i kullanarak, kodunuzu otomatik olarak denetleyebilirsiniz. Sürekli entegrasyon (CI/CD) araçlarınızı kullanarak, her kod değişikliği yapıldığında ESLint'i otomatik olarak çalıştırabilir ve uyumsuz kodları reddedebilirsiniz.
+        
+    6. **Geribildirim ve İyileştirmeler:**
+        
+        Standartların uygulanması ve uyumun sağlanmasının ardından, projenin ilerleyen aşamalarında geri bildirim toplamalı ve kod standartlarını iyileştirmek için gerektiğinde kuralları güncellemelisiniz.
+        
+    
+    Takım içi kod standartlarının oluşturulması ve uygulanması, projenizin ve organizasyonunuzun kod kalitesini ve tutarlılığını artırmanıza yardımcı olur. Bunun sonucunda, kodunuz daha okunabilir ve bakımı daha kolay hale gelir.
+    
 - **ESLint Entegrasyonuyla Otomasyon:**
-    - Örneklerle Git Hook'ları ve CI/CD araçlarıyla otomatik linting ve düzeltme akışları
+    
+    ESLint'i git hook'ları ve sürekli entegrasyon (CI/CD) araçlarıyla otomatikleştirmek, kod kalitesini ve uyumunu korumak için çok önemlidir. İşte bu konuda git hook'ları ve CI/CD araçlarıyla nasıl otomatik linting ve düzeltme akışları oluşturabileceğinizi örneklerle anlatalım:
+    
+    **Git Hook'ları ile Otomatik Linting ve Düzeltme:**
+    
+    1. **pre-commit Hook:**
+        
+        Git pre-commit hook'u, her bir git commit işlemi öncesi çalıştırılır ve geliştiricinin kodunu commitlemeden önce linting yapmasına olanak tanır. Aşağıdaki adımları takip edebilirsiniz:
+        
+        - Proje kök dizininde **`.git/hooks`** klasörünü kontrol edin. Eğer **`pre-commit`** adında bir dosya yoksa, bu adıda bir dosya oluşturun.
+        - **`pre-commit`** dosyasını açın ve içine aşağıdaki gibi bir komut ekleyin:
+            
+            ```bash
+            #!/bin/sh
+            npm run lint # veya eslint --fix gibi bir komut
+            ```
+            
+        - Dosyayı kaydedip çalıştırılabilir hale getirin:
+            
+            ```bash
+            chmod +x .git/hooks/pre-commit
+            ```
+            
+        
+        Artık her commit işlemi öncesi otomatik olarak linting yapılacaktır. Eğer ESLint hataları bulunuyorsa, commit işlemi reddedilir.
+        
+    
+    **CI/CD Araçları ile Otomatik Linting ve Düzeltme:**
+    
+    1. **Travis CI Örneği:**
+        
+        Travis CI gibi sürekli entegrasyon araçları, projenizde otomatik linting ve düzeltme işlemlerini kolayca entegre edebilir. Aşağıda bir örnek adım adım açıklanmıştır:
+        
+        - **`.travis.yml`** dosyanızı projenizin kök dizininde oluşturun veya düzenleyin.
+        - Dosyanın içine aşağıdaki gibi bir yapı ekleyin:
+            
+            ```yaml
+            language: node_js
+            node_js:
+              - "12"
+            
+            install:
+              - npm install
+            
+            script:
+              - npm run lint # veya eslint --fix gibi bir komut
+            
+            ```
+            
+        - Bu yapı, Travis CI'nin proje dilini ve node sürümünü tanımlar. Ardından **`npm install`** ile bağımlılıkları kurar ve **`npm run lint`** komutunu kullanarak linting işlemi gerçekleştirir.
+        
+        Travis CI ayarlarınıza projenizi ekleyin ve her commit işlemi veya dal birleştirme (pull request) işlemi sırasında linting işleminin otomatik olarak çalışmasını sağlayabilirsiniz.
+        
+    2. **Jenkins veya CircleCI gibi Diğer Araçlar:**
+        
+        Jenkins, CircleCI veya diğer sürekli entegrasyon araçlarını kullanıyorsanız, benzer bir yaklaşımı bu araçlar için de uygulayabilirsiniz. Her aracın kendi belirli yapılandırma ve komutları vardır, bu nedenle kullanmak istediğiniz araca özgü dokümantasyonu incelemelisiniz.
+        
+        Bu otomatik linting ve düzeltme akışları, projenizin sürekli olarak uyumlu ve kaliteli kod üretmesine yardımcı olur. Geliştiriciler hataları daha erken tespit eder ve kod depolamanızda düzgün bir şekilde yönetilir.
 </details>
 
 <details>
