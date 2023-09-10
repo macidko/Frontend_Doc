@@ -2931,9 +2931,9 @@ Grunt JavaScript task runner'ı hakkında başlangıç ve ileri seviye konuları
 
 <details>
   <summary>Babel</summary>
- - **Babel Nedir ve Neden Kullanılır?**
-    
-    **Babel Nedir ve Neden Kullanılır?**
+# Babel
+
+- **Babel Nedir ve Neden Kullanılır?**
     
     Babel, modern JavaScript kodlarını eski tarayıcılarda çalışabilen JavaScript'e dönüştüren bir JavaScript derleyicisidir. İşte Babel'in temel amacı ve neden kullanıldığına dair bazı önemli noktalar:
     
